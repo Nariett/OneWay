@@ -1,0 +1,143 @@
+﻿<Page x:Class="OneWay.Pages.CarInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OneWay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddCarPage">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Информация об автомобиле" Grid.Column="0" FontSize ="25" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,403"/>
+            <ScrollViewer Grid.Column="0" Margin="0 50 0 0">
+                <StackPanel x:Name="HistoryPanel"  Orientation="Vertical">
+                    <Grid x:Name="FilterGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <!-- Первая строка -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Марка" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="CarBrand" Tag="Марка" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent"  Margin="10 0 0 10" Visibility="Visible"/>
+                        <!-- Вторая строка -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Модель" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Name="CarModel" Tag="Модель" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10" Visibility="Visible"/>
+                        <!-- Третья строка -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Поколение" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="CarGeneration" Tag="Поколение" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent"  Margin="10 0 0 10" Visibility="Visible"/>
+                        <!-- Четвертая строка -->
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Комплектация" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="CarEquipment" Tag="Комплектация" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent"  Margin="10 0 0 10" Visibility="Visible"/>
+                        <!-- Пятая строка -->
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Год выпуска" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" x:Name="Year" Tag="Год выпуска" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent"  Margin="10 0 0 10" />
+                        <!-- Шестая строка -->
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Тип кузова" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" x:Name="Body" FontSize="18" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 10"/>
+                        <!-- Седьмая строка -->
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Тип привода" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="6" Grid.Column="1" x:Name="Drive" FontSize="18" Margin="10 0 0 10" Foreground="{DynamicResource TextSecundaryColor}"/>
+                        <!-- Восьмая строка -->
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="Тип трансмиссии" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="7" Grid.Column="1" x:Name="GearBox" FontSize="18" Height="35" Margin="10 0 0 10" Foreground="{DynamicResource TextSecundaryColor}"/>
+
+                        <!-- Девятая строка -->
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="Число мест" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="8" Grid.Column="1" x:Name="Seats" Tag="Число мест" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10" />
+                        <!-- Десятая строка -->
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="Число дверей" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="9" Grid.Column="1" x:Name="Doors" Tag="Число дверей" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10" />
+                        <!-- Одиннадцатая  строка -->
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="Тип двигателя" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="10" Grid.Column="1" x:Name="EngineType" FontSize="18" Height="35" Margin="10 0 5 6" Foreground="{DynamicResource TextSecundaryColor}" />
+                        <!-- Двенадцатая строка -->
+                        <TextBlock Grid.Row="11" Grid.Column="0" x:Name="TextVolume" Text="Объем двигателя, куб.см" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBlock Grid.Row="11" Grid.Column="1" x:Name="Volume" Tag="Объем двигателя" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10" Visibility="Visible"/>
+                        <!-- Тринадцатая строка -->
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="Потребляемое топливо" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="12" Grid.Column="1" x:Name="Fuel" FontSize="18" Height="35" Margin="10 0 0 10" Foreground="{DynamicResource TextSecundaryColor}"/>
+                        <!-- Четырнадцатая строка -->
+                        <TextBlock Grid.Row="13" Grid.Column="0" x:Name="TextOctaneNumber" Text="Октановое число" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBlock Grid.Row="13" Grid.Column="1" x:Name="OctaneNumber" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 10" Visibility="Visible"/>
+                        <!-- Пятнадцатая строка -->
+                        <TextBlock Grid.Row="14" Grid.Column="0" x:Name="TextFuelConsumption" Text="Расход топлива в смешанном цикле, л/100 км" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 6" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Grid.Row="14" Grid.Column="1" x:Name="FuelConsumption" Tag="Потребление топлива" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10"/>
+                        <!-- Шеснадацатая строка -->
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="Максимальная скорость, км/ч" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="15" Grid.Column="1" x:Name="MaxSpeed" Tag="Максимальная скорость" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10"/>
+                        <!-- Семнадацатая строка -->
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="Кондиционер" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 10"/>
+                        <TextBlock Grid.Row="16" Grid.Column="1" x:Name="Conditioner" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 5 6"/>
+                        <!-- Восемнадцатая строка-->
+                        <TextBlock Grid.Row="17" Grid.Column="0" x:Name="TextBlockRangePerCharge" Text="Запас хода на электротяге, км" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBlock Grid.Row="17" Grid.Column="1" x:Name="RangePerCharge" Tag="Запас хода на электротяге" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10" Visibility="Visible"/>
+                        <!--  Девятнадцатая строка -->
+                        <TextBlock Grid.Row="18" Grid.Column="0" x:Name="TextBlockBatteryCapacity" Text="Ёмкость батареи, кВт*ч" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBlock Grid.Row="18" Grid.Column="1" x:Name="BatteryCapacity" Tag="Объем батареи" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 10" Visibility="Visible"/>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Настройки" FontSize ="25" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,0"/>
+                <Button x:Name="DeleteButton" Content="Удалить" FontSize="15" Foreground="{DynamicResource SecundaryBackgroundColor}" Margin="10 5 10 5" BorderThickness="0" Click="DeleteButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="border" Background="{DynamicResource TextSecundaryColor}" CornerRadius="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#ADD8E6"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="FavoriteButton" FontSize="15" Foreground="{DynamicResource SecundaryBackgroundColor}" Margin="10 5 10 5" BorderThickness="0" Click="FavoriteButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="border" Background="{DynamicResource TextSecundaryColor}" CornerRadius="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#ADD8E6"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

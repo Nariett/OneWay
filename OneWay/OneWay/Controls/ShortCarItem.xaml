@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="OneWay.Controls.ShortCarItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:OneWay.Controls"
+             mc:Ignorable="d" Name="this">
+    <Border Height="auto" Width="auto" Background="Transparent" BorderThickness="2" BorderBrush="{DynamicResource TextSecundaryColor}" Margin="10" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <TextBlock Text="{Binding CarName, ElementName=this, FallbackValue = BMW}" FontSize="23" Foreground="{DynamicResource TextSecundaryColor}" Margin="10"/>
+            </StackPanel>
+            <Grid Grid.Row="1" Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <iconPacks:PackIconMaterial x:Name ="Engine" Grid.Row="0" Grid.Column="0" Kind="Engine" Height="20" Width="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Volume, ElementName=this, FallbackValue = 2.4 л}" FontSize="15" TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <!-- Подсказка -->
+                    <Border  Grid.Row="0" Grid.Column="0" Width="auto" Height="auto" Background="Transparent" >
+                        <Border.ToolTip>
+                            <ToolTip Background="Transparent" BorderThickness="0" Placement="Bottom" HorizontalOffset="90">
+                                <Border Height="30"  Width="auto" CornerRadius="5"  Background="{DynamicResource PrimaryBlueColor}">
+                                    <TextBlock Text="Объем двигателя и тип топлива" Foreground="White" FontSize="14" FontWeight="Regular" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 5 10 5"/>
+                                </Border>
+                            </ToolTip>
+                        </Border.ToolTip>
+                    </Border>
+                    
+                    <iconPacks:PackIconMaterial Grid.Row="1" Grid.Column="0" Kind="CarShiftPattern" Height="20" Width="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Transmission, ElementName=this, FallbackValue = Механика}" FontSize="15" TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <!-- Подсказка -->
+                    <Border  Grid.Row="1" Grid.Column="0" Width="auto" Height="auto" Background="Transparent" >
+                        <Border.ToolTip>
+                            <ToolTip Background="Transparent" BorderThickness="0" Placement="Bottom" HorizontalOffset="40">
+                                <Border Height="30"  Width="auto" CornerRadius="5"  Background="{DynamicResource PrimaryBlueColor}">
+                                    <TextBlock Text="Коробка передач" Foreground="White" FontSize="14" FontWeight="Regular" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 5 10 5"/>
+                                </Border>
+                            </ToolTip>
+                        </Border.ToolTip>
+                    </Border>
+                </Grid>
+                
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <iconPacks:PackIconMaterial Grid.Row="0" Grid.Column="0" Kind="Car" Height="20" Width="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border  Grid.Row="0" Grid.Column="0" Width="auto" Height="auto" Background="Transparent" >
+                        <Border.ToolTip>
+                            <ToolTip Background="Transparent" BorderThickness="0" Placement="Bottom" HorizontalOffset="20">
+                                <Border Height="30"  Width="auto" CornerRadius="5"  Background="{DynamicResource PrimaryBlueColor}">
+                                    <TextBlock Text="Тип кузова" Foreground="White" FontSize="14" FontWeight="Regular" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 5 10 5"/>
+                                </Border>
+                            </ToolTip>
+                        </Border.ToolTip>
+                    </Border>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Body, ElementName=this, FallbackValue = Седан}" FontSize="15" TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    <iconPacks:PackIconMaterial Grid.Row="1" Grid.Column="0" Kind="CarSeat" Height="20" Width="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border  Grid.Row="1" Grid.Column="0" Width="auto" Height="auto" Background="Transparent" >
+                        <Border.ToolTip>
+                            <ToolTip Background="Transparent" BorderThickness="0" Placement="Bottom" HorizontalOffset="70">
+                                <Border Height="30"  Width="auto" CornerRadius="5"  Background="{DynamicResource PrimaryBlueColor}">
+                                    <TextBlock Text="Число мест в автомобиле" Foreground="White" FontSize="14" FontWeight="Regular" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 5 10 5"/>
+                                </Border>
+                            </ToolTip>
+                        </Border.ToolTip>
+                    </Border>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Seat, ElementName=this, FallbackValue = 6}" FontSize="15" TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="OneWay.Controls.ShortTripItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OneWay.Controls"
+             mc:Ignorable="d" Name="this">
+    <Border Height="100" Width="auto" BorderThickness="2" BorderBrush="{DynamicResource TextSecundaryColor}" Margin="10" CornerRadius="10" Background="Transparent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Trip, ElementName=this, FallbackValue = Минск - Брест}" FontSize="23" Foreground="{DynamicResource TextSecundaryColor}" Margin="10"/>
+            </WrapPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="Дистанция" FontSize="15" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 10 10"/>
+                    <TextBlock Text="{Binding Distanse, ElementName=this, FallbackValue = 152 км}" FontSize="15" TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" Margin=" 10 -5 10 10"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="Время в пути" FontSize="15" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 10 10"/>
+                    <TextBlock Text="{Binding Time, ElementName=this, FallbackValue = 12:02 ч}" FontSize="15" TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 -5 10 10"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="Автомобиль" FontSize="15" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 10 10"/>
+                    <TextBlock Text="{Binding Car, ElementName=this, FallbackValue = BMW}" FontSize="15"  TextAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 -5 10 10"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

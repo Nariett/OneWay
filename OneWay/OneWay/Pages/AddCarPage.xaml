@@ -1,0 +1,187 @@
+﻿<Page x:Class="OneWay.Pages.AddCarPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OneWay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddCarPage">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Новый автомобиль" Grid.Column="0" FontSize ="25" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,403"/>
+            <ScrollViewer Grid.Column="0" Margin="0 50 0 0">
+                <StackPanel x:Name="HistoryPanel"  Orientation="Vertical">
+                    <Grid x:Name="FilterGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <!-- Первая строка -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Марка" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="CarBrand" Tag="Марка" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="ComboBoxCarBrand" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10,0,0,5" BorderBrush="{DynamicResource TextSecundaryColor}" Visibility="Collapsed" SelectionChanged="ComboBoxCarBrand_SelectionChanged"/>
+                        <!-- Вторая строка -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Модель" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Name="CarModel" Tag="Модель" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible"/>
+                        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="ComboBoxCarModel" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10,0,0,5" BorderBrush="{DynamicResource TextSecundaryColor}" Visibility="Collapsed" SelectionChanged="ComboBoxCarModel_SelectionChanged"/>
+                        <!-- Третья строка -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Поколение" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" x:Name="CarGeneration" Tag="Поколение" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible"/>
+                        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="ComboBoxCarGeneration" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10,0,0,5" BorderBrush="{DynamicResource TextSecundaryColor}" Visibility="Collapsed" SelectionChanged="ComboBoxCarGeneration_SelectionChanged"/>
+                        <!-- Четвертая строка -->
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Комплектация" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" x:Name="CarEquipment" Tag="Комплектация" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible"/>
+                        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="ComboBoxCarEquipment" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10,0,0,5" BorderBrush="{DynamicResource TextSecundaryColor}" Visibility="Collapsed" SelectionChanged="ComboBoxCarEquipment_SelectionChanged"/>
+                        <!-- Пятая строка -->
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Год выпуска" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" x:Name="Year" Tag="Год выпуска" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" IsReadOnly="False" PreviewTextInput="Year_PreviewTextInput"/>
+                        <!-- Шестая строка -->
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Тип кузова" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <ComboBox Grid.Row="5" Grid.Column="1" x:Name="Body" FontSize="18" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,0,5,6">
+                            <ComboBoxItem Content="Седан"/>
+                            <ComboBoxItem Content="Внедорожник"/>
+                            <ComboBoxItem Content="Универсал"/>
+                            <ComboBoxItem Content="Хэтчбек"/>
+                            <ComboBoxItem Content="Лифтбек"/>
+                            <ComboBoxItem Content="Минивэн"/>
+                            <ComboBoxItem Content="Купе"/>
+                            <ComboBoxItem Content="Пикап"/>
+                            <ComboBoxItem Content="Кабриолет"/>
+                        </ComboBox>
+                        <!-- Седьмая строка -->
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Тип привода" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <ComboBox Grid.Row="6" Grid.Column="1" x:Name="Drive" FontSize="18" Margin="10 0 5 6" Foreground="{DynamicResource TextSecundaryColor}">
+                            <ComboBoxItem Content="Передний"/>
+                            <ComboBoxItem Content="Задний"/>
+                            <ComboBoxItem Content="Полный"/>
+                        </ComboBox>
+                        <!-- Восьмая строка -->
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="Тип трансмиссии" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 10"/>
+                        <ComboBox Grid.Row="7" Grid.Column="1" x:Name="GearBox" FontSize="18" Height="35" Margin="10 0 5 6" Foreground="{DynamicResource TextSecundaryColor}">
+                            <ComboBoxItem Content="АКПП"/>
+                            <ComboBoxItem Content="МКПП"/>
+                        </ComboBox>
+                        <!-- Девятая строка -->
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="Число мест" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" x:Name="Seats" Tag="Число мест" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" PreviewTextInput="Seats_PreviewTextInput"/>
+                        <!-- Десятая строка -->
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="Число дверей" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="9" Grid.Column="1" x:Name="Doors" Tag="Число дверей" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" PreviewTextInput="Doord_PreviewTextInput"/>
+                        <!-- Одиннадцатая  строка -->
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="Тип двигателя" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <ComboBox Grid.Row="10" Grid.Column="1" x:Name="EngineType" FontSize="18" Height="35" Margin="10 0 5 6" Foreground="{DynamicResource TextSecundaryColor}" SelectionChanged="EngineType_SelectionChanged">
+                            <ComboBoxItem Content="ДВС"/>
+                            <ComboBoxItem Content="Электрический"/>
+                            <ComboBoxItem Content="Гибрид"/>
+                        </ComboBox>
+                        <!-- Двенадцатая строка -->
+                        <TextBlock Grid.Row="11" Grid.Column="0" x:Name="TextVolume" Text="Объем двигателя, куб.см" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBox Grid.Row="11" Grid.Column="1" x:Name="Volume" Tag="Объем двигателя" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible" PreviewTextInput="Volume_PreviewTextInput"/>
+                        <!-- Тринадцатая строка -->
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="Потребляемое топливо" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <ComboBox Grid.Row="12" Grid.Column="1" x:Name="Fuel" FontSize="18" Height="35" Margin="10 0 5 6" Foreground="{DynamicResource TextSecundaryColor}" SelectionChanged="Fuel_SelectionChanged">
+                            <ComboBoxItem x:Name="Petrol" Content="Бензин" Visibility="Visible"/>
+                            <ComboBoxItem x:Name= "Diesel" Content = "Дизельное топливо" Visibility="Visible"/>
+                            <ComboBoxItem x:Name="Electro" Content="Электричество" Visibility="Visible"/>
+                            <ComboBoxItem x:Name="Gaz" Content="Газ"/>
+                        </ComboBox>
+                        <!-- Четырнадцатая строка -->
+                        <TextBlock Grid.Row="13" Grid.Column="0" x:Name="TextOctaneNumber" Text="Октановое число" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <ComboBox Grid.Row="13" Grid.Column="1" x:Name="OctaneNumber" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 5 6" Visibility="Visible">
+                            <ComboBoxItem Content="АИ-95"/>
+                            <ComboBoxItem Content="АИ-98"/>
+                            <ComboBoxItem Content="ДТ"/>
+                        </ComboBox>
+                        <!-- Пятнадцатая строка -->
+                        <TextBlock Grid.Row="14" Grid.Column="0" x:Name="TextFuelConsumption" Text="Расход топлива в смешанном цикле, л/100 км" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 6" TextWrapping="WrapWithOverflow"/>
+                        <TextBox Grid.Row="14" Grid.Column="1" x:Name="FuelConsumption" Tag="Потребление топлива" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10"/>
+                        <!-- Шеснадацатая строка -->
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="Максимальная скорость, км/ч" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0"/>
+                        <TextBox Grid.Row="15" Grid.Column="1" x:Name="MaxSpeed" Tag="Максимальная скорость" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10"/>
+                        <!-- Семнадацатая строка -->
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="Кондиционер" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 10"/>
+                        <ComboBox Grid.Row="16" Grid.Column="1" x:Name="Conditioner" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 5 6" >
+                            <ComboBoxItem Content="Нет"/>
+                            <ComboBoxItem Content="Есть"/>
+                        </ComboBox>
+                        <!-- Восемнадцатая строка-->
+                        <TextBlock Grid.Row="17" Grid.Column="0" x:Name="TextBlockRangePerCharge" Text="Запас хода на электротяге, км" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBox Grid.Row="17" Grid.Column="1" x:Name="RangePerCharge" Tag="Запас хода на электротяге" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible"/>
+                        <!--  Девятнадцатая строка -->
+                        <TextBlock Grid.Row="18" Grid.Column="0" x:Name="TextBlockBatteryCapacity" Text="Ёмкость батареи, кВт*ч" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 0 0" Visibility="Visible"/>
+                        <TextBox Grid.Row="18" Grid.Column="1" x:Name="BatteryCapacity" Tag="Объем батареи" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" BorderThickness="0" Margin="10 0 0 10" Visibility="Visible"/>
+                        <!--  Двадцатая строка -->
+                        <Button Grid.Row="19" Grid.Column="1" x:Name="AddButton" Content="Добавить автомобиль" FontSize="25" Foreground="{DynamicResource SecundaryBackgroundColor}" Margin="10 5 10 5" BorderThickness="0" Click="Button_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Border x:Name="border" Background="{DynamicResource TextSecundaryColor}" CornerRadius="5">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#ADD8E6"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Grid.Row="19" Grid.Column="0" x:Name="Button_Web" Content="Посетить сайт Drom.ru" FontSize="25" Foreground="{DynamicResource SecundaryBackgroundColor}" Margin="10 5 10 5" BorderThickness="0" Click="Button_Web_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Border x:Name="border" Background="{DynamicResource TextSecundaryColor}" CornerRadius="5">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#ADD8E6"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Настройки" FontSize ="25" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,0"/>
+                <TextBlock Text="Заполнение полей" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,0"/>
+                <ComboBox Grid.Row="16" Grid.Column="1" x:Name="Fill" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 5 6" SelectionChanged="Fill_SelectionChanged" >
+                    <ComboBoxItem Content="Ручное"/>
+                    <ComboBoxItem Content="Автоматическое"/>
+                </ComboBox>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Page>

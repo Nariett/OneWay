@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="OneWay.Controls.RouteItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OneWay.Controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             Name="this" mc:Ignorable="d" Loaded="Route_Loaded">
+    <Border BorderBrush="{DynamicResource TextSecundaryColor}" BorderThickness="1" CornerRadius="5" Height="100" Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="174"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="InfoButton" Grid.Column="0" Height="30" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center" Click="InfoButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border Background="Transparent" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource TextSecundaryColor}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <TextBlock Text="Информация" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="DeleteButton" Grid.Column="0" Height="30" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center" Click="DeleteButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Border Background="Transparent" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource TextSecundaryColor}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="Удалить" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                        <TextBlock Text="{Binding TripName, ElementName=this, FallbackValue = Минск-Брест}" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 10 0 10"/>
+                        <iconPacks:PackIconUnicons x:Name="PointIcon" Kind="MapMarkerInfo" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource TextSecundaryColor}" Background="Transparent" Margin="10 0 0 0" Visibility="Visible">
+                            <iconPacks:PackIconUnicons.ToolTip>
+                                <ToolTip Background="Transparent" BorderThickness="0" Placement="Bottom" HorizontalOffset="90">
+                                    <Border Height="auto"  Width="auto" CornerRadius="5"  Background="{DynamicResource PrimaryBlueColor}">
+                                        <TextBlock  Text="{Binding Point}" x:Name="ToolTipTextBlock" Foreground="White" FontSize="14" FontWeight="Regular" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 5 10 5"  TextWrapping="Wrap"/>
+                                    </Border>
+                                </ToolTip>
+                            </iconPacks:PackIconUnicons.ToolTip>
+                        </iconPacks:PackIconUnicons>
+                        <Button x:Name="FavoriteIcon" Height="16" Width="16" Background="Transparent" Foreground="{DynamicResource TextSecundaryColor}" BorderThickness="0" HorizontalAlignment="Right" Margin="10,0,0,0" Click="FavoriteIcon_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid Background="Transparent">
+                                        <!-- Добавлен прозрачный фон -->
+                                        <iconPacks:PackIconUnicons Kind="Favorite"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Расстояние" Grid.Row="0" FontSize ="15" Foreground="{DynamicResource TextSecundaryColor}" VerticalAlignment="Bottom" Margin="10 0 0 0"/>
+                        <TextBlock Text="{Binding Distance, ElementName=this, FallbackValue = 220 км}" Grid.Row="1" FontSize ="15" Foreground="{DynamicResource TextSecundaryColor}" VerticalAlignment="Top" Margin="10 0 0 0"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Время в пути" Grid.Row="0" FontSize ="15" Foreground="{DynamicResource TextSecundaryColor}" VerticalAlignment="Bottom" Margin="10 0 0 0"/>
+                        <TextBlock Text="{Binding Time, ElementName=this, FallbackValue = 2.30 ч}" Grid.Row="1" FontSize ="15" Foreground="{DynamicResource TextSecundaryColor}" VerticalAlignment="Top" Margin="10 0 0 0"/>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

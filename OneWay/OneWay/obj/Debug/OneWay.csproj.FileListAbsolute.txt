@@ -1,0 +1,383 @@
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.csproj.AssemblyReference.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Assets\Icons.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Themes\DarkTheme.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Controls\MenuItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\MainWindow.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\App.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay_MarkupCompile.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay_MarkupCompile.lref
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Controls\UserPopup.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Pages\Dashboard.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Pages\Home.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\App.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Controls\MenuItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Controls\UserPopup.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Pages\Dashboard.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Pages\Home.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Styles\MainStyle.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.exe
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\bin\Debug\OneWay.exe.config
+C:\Users\Sasha\Desktop\OneWay\OneWay\bin\Debug\OneWay.exe
+C:\Users\Sasha\Desktop\OneWay\OneWay\bin\Debug\OneWay.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\MainWindow.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.g.resources
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.Properties.Resources.resources
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.csproj.GenerateResource.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\OneWay.csproj.CoreCompileInputs.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Controls\FuelBlock.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\obj\Debug\Controls\FuelBlock.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OneWay.exe.config
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OneWay.exe
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OneWay.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.AssemblyReference.cache
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.SuggestedBindingRedirects.cache
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Assets\Icons.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Themes\DarkTheme.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\FuelBlock.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\MenuItem.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\UserPopup.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\MainWindow.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\Dashboard.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\Home.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\App.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay_MarkupCompile.cache
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay_MarkupCompile.lref
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\App.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\FuelBlock.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\MenuItem.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\UserPopup.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\MainWindow.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\Dashboard.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\Home.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Styles\MainStyle.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.g.resources
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.Properties.Resources.resources
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.GenerateResource.cache
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.CoreCompileInputs.cache
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.CopyComplete
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.exe
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\OneWay.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OneWay.exe.config
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OneWay.exe
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OneWay.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.AssemblyReference.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Assets\Icons.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Themes\DarkTheme.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\MenuItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\UserPopup.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\MainWindow.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\Dashboard.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\Home.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\App.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay_MarkupCompile.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay_MarkupCompile.lref
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\App.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\MenuItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\UserPopup.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\MainWindow.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\Dashboard.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\Home.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Styles\MainStyle.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.g.resources
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.Properties.Resources.resources
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.GenerateResource.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.CoreCompileInputs.cache
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.csproj.CopyComplete
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.exe
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\OneWay.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Codicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Coolicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Entypo.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FileIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontisto.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Ionicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.JamIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Microns.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Modern.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Octicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Typicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Unicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Zondicons.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Codicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Codicons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Coolicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Coolicons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Entypo.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Entypo.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FileIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FileIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontisto.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontisto.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Ionicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Ionicons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.JamIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.JamIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Microns.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Microns.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Modern.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Modern.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Octicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Octicons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Typicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Typicons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Unicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Unicons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Zondicons.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Zondicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Codicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Coolicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Entypo.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FileIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontisto.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Ionicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.JamIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Microns.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Modern.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Octicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Typicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Unicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Zondicons.dll
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BootstrapIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.BoxIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Codicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Codicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Coolicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Coolicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Entypo.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Entypo.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.EvaIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FeatherIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FileIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FileIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontaudio.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.FontAwesome.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontisto.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Fontisto.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.ForkAwesome.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Ionicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Ionicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.JamIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.JamIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialDesign.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.MaterialLight.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Microns.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Microns.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Modern.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Modern.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Octicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Octicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PicolIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.PixelartIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RadixIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RemixIcon.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.RPGAwesome.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.SimpleIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Typicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Typicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Unicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Unicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.VaadinIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Zondicons.pdb
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\bin\Debug\MahApps.Metro.IconPacks.Zondicons.xml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortTripItem.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortTripItem.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortCarItem.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortCarItem.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\History.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\History.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\Cars.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Pages\Cars.baml
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\TripItem.g.cs
+C:\Users\samsi\OneDrive\Рабочий стол\OneWay\OneWay\OneWay\obj\Debug\Controls\TripItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortCarItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortTripItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\TripItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\History.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortCarItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\ShortTripItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\TripItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\History.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\CarItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\CarItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\CustomMessageBox.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\CustomMessageBox.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\Report.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\Report.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\FuelItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\FuelItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Buffers.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Data.SQLite.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Memory.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Buffers.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Data.SQLite.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Memory.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AddCarPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AddCarPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\CarInfoPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\CarInfoPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\RegistrationPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\RegistrationPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AuthenticationPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AuthenticationPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\RouteItem.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AllRoutes.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Controls\RouteItem.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AllRoutes.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\RouteInfoPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\RouteInfoPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AllCarsPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AddRoutePage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\TripInfoPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AllCarsPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AddRoutePage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\TripInfoPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AllFuel.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AllFuel.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AddTripPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\AddTripPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\FuelPriceEditPage.g.cs
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\Pages\FuelPriceEditPage.baml
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\Xceed.Document.NET.dll
+C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\bin\Debug\Xceed.Words.NET.dll
