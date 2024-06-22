@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\obj\Debug\
+C:\GitHub\OneWay\OneWay\OneWay\obj\Debug\
 OneWay
 none
 false
 DEBUG;TRACE
-C:\Users\Sasha\Desktop\OneWay\OneWay\OneWay\App.xaml
+C:\GitHub\OneWay\OneWay\OneWay\App.xaml
 292138804980
 
-38229482385
-1681643625681
+39-2143706790
+1681444125655
 Assets\Icons.xaml;Controls\CarItem.xaml;Controls\CustomMessageBox.xaml;Controls\FuelItem.xaml;Controls\MenuItem.xaml;Controls\RouteItem.xaml;Controls\ShortCarItem.xaml;Controls\ShortTripItem.xaml;Controls\TripItem.xaml;Controls\UserPopup.xaml;MainWindow.xaml;Pages\AddCarPage.xaml;Pages\AllRoutes.xaml;Pages\AuthenticationPage.xaml;Pages\CarInfoPage.xaml;Pages\AllCarsPage.xaml;Pages\Dashboard.xaml;Pages\AllFuel.xaml;Pages\FuelPriceEditPage.xaml;Pages\History.xaml;Pages\Home.xaml;Pages\RegistrationPage.xaml;Pages\Report.xaml;Pages\AddRoutePage.xaml;Pages\RouteInfoPage.xaml;Pages\AddTripPage.xaml;Pages\TripInfoPage.xaml;Styles\MainStyle.xaml;Themes\DarkTheme.xaml;
 
-False
+True
 

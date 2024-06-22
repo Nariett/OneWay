@@ -29,7 +29,7 @@ namespace OneWay.Pages
                 this.FavoriteButton.Content = "Добавить в избранные";
 
             }
-            route = db.GetRouteInfoById(iduser);
+            route = db.GetRouteInfoById(IdRoute);
             StartPoint.Text = route.Item1;
             FinishPoint.Text = route.Item2;
             Distance.Text = route.Item3.ToString() + " км";

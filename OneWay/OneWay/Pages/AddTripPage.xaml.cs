@@ -293,7 +293,7 @@ namespace OneWay.Pages
                         Price.BorderBrush = Brushes.Green;
                         Price.BorderThickness = new Thickness(0, 0, 0, 2);
                         Price.Text = selectTrip.UsedMoney.ToString();
-                        var message = CustomMessageBox.Show("Уведомление", $"Сохранить поездку на автомобиле {comboBoxCar.SelectedItem.ToString()} по машруту {comboBoxStartPoint.SelectedItem} - {comboBoxLastPoint.SelectedItem}", MessageBoxButton.YesNo, CustomMessageBox.MessageBoxImage.Information);
+                        var message = CustomMessageBox.Show("Уведомление", $"Сохранить поездку на автомобиле {selectItemCar} по машруту {comboBoxStartPoint.SelectedItem} - {comboBoxLastPoint.SelectedItem}", MessageBoxButton.YesNo, CustomMessageBox.MessageBoxImage.Information);
                         if(message == MessageBoxResult.Yes)
                         {
                             if (db.InsertTrip(selectTrip)) // добавление поездки в бд
