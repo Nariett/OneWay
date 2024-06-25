@@ -104,10 +104,7 @@
             <TextBlock Text="Мои Автомобили" Grid.Column="0" FontSize ="25" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,10"/>
 
             <ScrollViewer Grid.Row="0" Margin="0 50 0 0">
-                <WrapPanel x:Name="CarPanel">
-                    <!--<ctls:CarItem Id="1" CarName="Mercedes-Benz" Model="SLR McLaren" Volume="5.4 / Бензин" Transmission="АКПП" Body="Купе" Seat="2" FavoriteCar="0" FavoriteButtonClicked="FavoriteButton_Click"/>-->
-                    <!--<ctls:CarItem Id="2" CarName="Mercedes-Benz" Model="SLR McLaren" Volume="5.4 / Бензин" Transmission="АКПП" Body="Купе" Seat="2"/>-->
-                </WrapPanel>
+                <WrapPanel x:Name="CarPanel"/>
             </ScrollViewer>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -220,7 +217,7 @@
                                         <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Хетчбэк" Grid.Column="0" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="Хэтчбэк" Grid.Column="0" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Left"/>
                                     <Image Source="/Resources/Body/hatchback.png" Grid.Column="1" Height="25" HorizontalAlignment="Right"/>
                                 </Grid>
                             </CheckBox>
@@ -244,16 +241,6 @@
                                     <Image Source="/Resources/Body/minivan.png" Grid.Column="1" Height="25" HorizontalAlignment="Right"/>
                                 </Grid>
                             </CheckBox>
-                            <!--<CheckBox x:Name="Minibus" Style="{StaticResource CustomCheckBoxStyle}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Микроавтобус" Grid.Column="0" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Left"/>
-                                    <Image Source="/Resources/Body/minibus.png" Grid.Column="1" Height="25" HorizontalAlignment="Right"/>
-                                </Grid>
-                            </CheckBox>-->
                             <CheckBox x:Name="Coupe" Style="{StaticResource CustomCheckBoxStyle}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -264,16 +251,6 @@
                                     <Image Source="/Resources/Body/coupe.png" Grid.Column="1" Height="25" HorizontalAlignment="Right"/>
                                 </Grid>
                             </CheckBox>
-                            <!--<CheckBox x:Name="Van" Style="{StaticResource CustomCheckBoxStyle}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Фургон" Grid.Column="0" FontSize="20" Foreground="{DynamicResource TextSecundaryColor}" HorizontalAlignment="Left"/>
-                                    <Image Source="/Resources/Body/van.png" Grid.Column="1" Height="25" HorizontalAlignment="Right"/>
-                                </Grid>
-                            </CheckBox>-->
                             <CheckBox x:Name="Pickup" Style="{StaticResource CustomCheckBoxStyle}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>

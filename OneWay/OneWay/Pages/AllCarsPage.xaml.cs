@@ -112,7 +112,7 @@ namespace OneWay.Pages
             }
             if (Hatchback.IsChecked == true)
             {
-                Body.Add("Хетчбек");
+                Body.Add("Хэтчбек");
             }
             if (Liftback.IsChecked == true)
             {
@@ -273,11 +273,6 @@ namespace OneWay.Pages
                 
             }
         }
-/*        private void CarItemClick(object sender, MouseButtonEventArgs e)
-        {
-            CarItem clickedCar = sender as CarItem;
-            CustomMessageBox.Show("Уведомление", $"Вы выбрали автомобиль: {clickedCar.CarName}.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
-        }*/
         private void AddCarButton_Click(object sender, RoutedEventArgs e)
         {
             AddCarPage addCarPage = new AddCarPage(IdUser);
