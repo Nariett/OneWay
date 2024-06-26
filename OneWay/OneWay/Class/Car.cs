@@ -19,9 +19,10 @@
         public double? Volume {  get; set; }
         public string Fuel { get; set; }
         public int? FuelOctane { get; set; }
-        public string Conditioner { get; set; } = "Нету";
+        public string Conditioner { get; set; } = "Нет";
         public double FuelConsumption { get; set; }
         public double? RangePerCharge { get; set; }
         public double? BatteryCapacity { get; set; }
+        public Car() { }
     }
 }
