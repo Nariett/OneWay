@@ -1027,24 +1027,6 @@ namespace OneWay.Pages
                 e.Handled = true;
                 return;
             }
-
-            string currentText = Seats.Text.Insert(Seats.SelectionStart, e.Text); // Вставляем новый символ в текущий текст
-            if (!int.TryParse(currentText, out int seat))
-            {
-                e.Handled = true;
-                return;
-            }
-
-            if (seat <= 0)
-            {
-                var messageBoxResultTwo = CustomMessageBox.Show("Уведомление", $"Число мест должно быть больше 0", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                e.Handled = true;
-            }
-            else if (seat > 10)
-            {
-                CustomMessageBox.Show("Уведомление", $"Число мест должно быть меньше или равно 10", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                e.Handled = true;
-            }
         }
 
         private void Doord_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -1165,135 +1147,139 @@ namespace OneWay.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(Fill.SelectedIndex == 1)
+            try
             {
-                if(CarCheck(newCar)) // проверка автомобиля на заполенность
+                if (Fill.SelectedIndex == 1)
                 {
-                    newCar.IdUser = IdUser;
-                    if(db.InsertCar(newCar))
+                    if (CarCheck(newCar)) // проверка автомобиля на заполенность
                     {
-                        CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        newCar.IdUser = IdUser;
+                        if (db.InsertCar(newCar))
+                        {
+                            CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} не был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
+                        }
                     }
                     else
                     {
-                        CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} не был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
+                        CustomMessageBox.Show("Уведомление", $"Недостаточно информации об автомобиле {newCar.Brand} {newCar.Model}. Выберите другой автомобиль.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
                     }
                 }
                 else
                 {
-                    CustomMessageBox.Show("Уведомление", $"Недостаточно информации об автомобиле {newCar.Brand} {newCar.Model}. Выберите другой автомобиль.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
-                }
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(CarBrand.Text) || string.IsNullOrEmpty(CarModel.Text) || string.IsNullOrEmpty(CarGeneration.Text)
-                || string.IsNullOrEmpty(CarEquipment.Text) || string.IsNullOrEmpty(Year.Text) || string.IsNullOrEmpty(Seats.Text)
-                || string.IsNullOrEmpty(Doors.Text) || string.IsNullOrEmpty(FuelConsumption.Text))
-                {
-                    CustomMessageBox.Show("Уведомление", $"Пожалуйста, заполните все обязательные поля.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                    return;
-                }
-
-                int seats, doors;
-                double volume = 0 ,fuelConsumption, rangePerCharge = 0, batteryCapacity = 0;
-                if (!int.TryParse(Seats.Text, out seats) || seats <= 0)
-                {
-                     CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для количества сидений.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                    return;
-                }
-
-                if (!int.TryParse(Doors.Text, out doors) || doors <= 0)
-                {
-                    CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для количества дверей.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                    return;
-                }
-
-                int? maxSpeed = null;
-                if (MaxSpeed.Text != "")
-                {
-                    if (!int.TryParse(MaxSpeed.Text, out int parsedMaxSpeed) || parsedMaxSpeed <= 0)
+                    if (string.IsNullOrEmpty(CarBrand.Text) || string.IsNullOrEmpty(CarModel.Text) || string.IsNullOrEmpty(CarGeneration.Text)
+                    || string.IsNullOrEmpty(CarEquipment.Text) || string.IsNullOrEmpty(Year.Text) || string.IsNullOrEmpty(Seats.Text)
+                    || string.IsNullOrEmpty(Doors.Text) || string.IsNullOrEmpty(FuelConsumption.Text))
                     {
-                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для максимальной скорости.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        CustomMessageBox.Show("Уведомление", $"Пожалуйста, заполните все обязательные поля.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
                         return;
                     }
-                    maxSpeed = parsedMaxSpeed;
-                }
 
-                if (Volume.Visibility == Visibility.Visible)
-                {
-                    if (!double.TryParse(Volume.Text, out volume) || volume <= 0)
-                    {
-                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для объема двигателя.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                        return;
-                    }
-                }
-                if (!double.TryParse(FuelConsumption.Text, out fuelConsumption) || fuelConsumption <= 0)
-                {
-                    CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для расхода топлива.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                    return;
-                }
-                if (RangePerCharge.Visibility == Visibility.Visible)
-                {
-                    if (!double.TryParse(RangePerCharge.Text, out rangePerCharge) || rangePerCharge <= 0)
-                    {
-                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для пробега на одном заряде.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                        return;
-                    }
-                }
-                if (RangePerCharge.Visibility == Visibility.Visible)
-                {
-                    if (!double.TryParse(BatteryCapacity.Text, out batteryCapacity) || batteryCapacity <= 0)
-                    {
-                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для емкости батареи.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                        return;
-                    }
-                }
-                if (Body.SelectedItem == null || Drive.SelectedItem == null || GearBox.SelectedItem == null
-                    || EngineType.SelectedItem == null || Fuel.SelectedItem == null || Conditioner.SelectedItem == null)
-                {
-                    CustomMessageBox.Show("Предупреждение", $"Пожалуйста, выберите значение для всех параметров.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
-                    return;
-                }
+                    int doors;
+                    double volume = 0, fuelConsumption, rangePerCharge = 0, batteryCapacity = 0;
+                   
 
-                Car newCar = new Car()
-                {
-                    Brand = CarBrand.Text,
-                    Model = CarModel.Text,
-                    Generation = CarGeneration.Text,
-                    Equipment = CarEquipment.Text,
-                    Year = Year.Text,
-                    Body = ((ComboBoxItem)Body.SelectedItem).Content.ToString(),
-                    Drive = ((ComboBoxItem)Drive.SelectedItem).Content.ToString(),
-                    GearBox = ((ComboBoxItem)GearBox.SelectedItem).Content.ToString(),
-                    Seats = seats,
-                    Doors = doors,
-                    MaxSpeed = MaxSpeed.Text != "" ? maxSpeed : (int?)null,
-                    EngineType = ((ComboBoxItem)EngineType.SelectedItem).Content.ToString(),
-                    Volume = Volume.Visibility == Visibility.Visible ? volume : (double?)null,
-                    Fuel = ((ComboBoxItem)Fuel.SelectedItem).Content.ToString(),
-                    FuelOctane = OctaneNumber.Visibility == Visibility.Visible ? OctaneNumber.SelectedIndex : (int?)null,
-                    Conditioner = ((ComboBoxItem)Conditioner.SelectedItem).Content.ToString(),
-                    FuelConsumption = fuelConsumption,
-                    RangePerCharge = RangePerCharge.Visibility == Visibility.Visible ? rangePerCharge : (double?)null,
-                    BatteryCapacity = BatteryCapacity.Visibility == Visibility.Visible ? batteryCapacity : (double?)null
-                };
-                if (CarCheck(newCar))
-                {
-                    newCar.IdUser = IdUser;
-                    if (db.InsertCar(newCar))
+                    if (!int.TryParse(Doors.Text, out doors) || doors <= 0)
                     {
-                        CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для количества дверей.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        return;
+                    }
+
+                    int? maxSpeed = null;
+                    if (MaxSpeed.Text != "")
+                    {
+                        if (!int.TryParse(MaxSpeed.Text, out int parsedMaxSpeed) || parsedMaxSpeed <= 0)
+                        {
+                            CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для максимальной скорости.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                            return;
+                        }
+                        maxSpeed = parsedMaxSpeed;
+                    }
+
+                    if (Volume.Visibility == Visibility.Visible)
+                    {
+                        if (!double.TryParse(Volume.Text, out volume) || volume <= 0)
+                        {
+                            CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для объема двигателя.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                            return;
+                        }
+                    }
+                    if (!double.TryParse(FuelConsumption.Text, out fuelConsumption) || fuelConsumption <= 0)
+                    {
+                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для расхода топлива.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        return;
+                    }
+                    if (RangePerCharge.Visibility == Visibility.Visible)
+                    {
+                        if (!double.TryParse(RangePerCharge.Text, out rangePerCharge) || rangePerCharge <= 0)
+                        {
+                            CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для пробега на одном заряде.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                            return;
+                        }
+                    }
+                    if (RangePerCharge.Visibility == Visibility.Visible)
+                    {
+                        if (!double.TryParse(BatteryCapacity.Text, out batteryCapacity) || batteryCapacity <= 0)
+                        {
+                            CustomMessageBox.Show("Предупреждение", $"Пожалуйста, введите корректное значение для емкости батареи.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                            return;
+                        }
+                    }
+                    if (Body.SelectedItem == null || Drive.SelectedItem == null || GearBox.SelectedItem == null
+                        || EngineType.SelectedItem == null || Fuel.SelectedItem == null || Conditioner.SelectedItem == null)
+                    {
+                        CustomMessageBox.Show("Предупреждение", $"Пожалуйста, выберите значение для всех параметров.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        return;
+                    }
+
+                    Car newCar = new Car()
+                    {
+                        Brand = CarBrand.Text,
+                        Model = CarModel.Text,
+                        Generation = CarGeneration.Text,
+                        Equipment = CarEquipment.Text,
+                        Year = Year.Text,
+                        Body = ((ComboBoxItem)Body.SelectedItem).Content.ToString(),
+                        Drive = ((ComboBoxItem)Drive.SelectedItem).Content.ToString(),
+                        GearBox = ((ComboBoxItem)GearBox.SelectedItem).Content.ToString(),
+                        Seats = int.Parse(Seats.Text),
+                        Doors = doors,
+                        MaxSpeed = MaxSpeed.Text != "" ? maxSpeed : (int?)null,
+                        EngineType = ((ComboBoxItem)EngineType.SelectedItem).Content.ToString(),
+                        Volume = Volume.Visibility == Visibility.Visible ? volume : (double?)null,
+                        Fuel = ((ComboBoxItem)Fuel.SelectedItem).Content.ToString(),
+                        FuelOctane = OctaneNumber.Visibility == Visibility.Visible ? OctaneNumber.SelectedIndex : (int?)null,
+                        Conditioner = ((ComboBoxItem)Conditioner.SelectedItem).Content.ToString(),
+                        FuelConsumption = fuelConsumption,
+                        RangePerCharge = RangePerCharge.Visibility == Visibility.Visible ? rangePerCharge : (double?)null,
+                        BatteryCapacity = BatteryCapacity.Visibility == Visibility.Visible ? batteryCapacity : (double?)null
+                    };
+                    if (CarCheck(newCar))
+                    {
+                        newCar.IdUser = IdUser;
+                        if (db.InsertCar(newCar))
+                        {
+                            CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} не был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
+                        }
                     }
                     else
                     {
-                        CustomMessageBox.Show("Уведомление", $"Автомобиль {newCar.Brand} {newCar.Model} не был добавлен в систему.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
+                        CustomMessageBox.Show("Уведомление", $"Недостаточно информации об автомобиле {newCar.Brand} {newCar.Model}. Выберите другой автомобиль.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
                     }
                 }
-                else
-                {
-                    CustomMessageBox.Show("Уведомление", $"Недостаточно информации об автомобиле {newCar.Brand} {newCar.Model}. Выберите другой автомобиль.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
-                }
             }
+            catch (ArgumentException ex)
+            {
+                CustomMessageBox.Show("Предупреждение", ex.Message, MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);
+            }
+            
         }
         private bool CarCheck(Car car)
         {

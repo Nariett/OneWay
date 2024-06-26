@@ -1,4 +1,6 @@
-﻿namespace OneWay.Class
+﻿using System;
+
+namespace OneWay.Class
 {
     internal class Car
     {
@@ -12,7 +14,29 @@
         public string Body { get; set; }
         public string Drive { get; set; }
         public string GearBox { get; set; }
-        public int Seats { get; set; }
+        private int seats;
+        public int Seats
+        {
+            get
+            {
+                return seats;
+            }
+            set
+            {
+                if (value > 0 && value <= 10)
+                {
+                    seats = value;
+                }
+                else if (value <= 0)
+                {
+                    throw new ArgumentException("Количество мест должно быть положительным числом.");
+                }
+                else if (value > 10)
+                {
+                    throw new ArgumentException("Количество мест не должно превышать 10.");
+                }
+            }
+        }
         public int Doors { get; set; }
         public int? MaxSpeed { get; set; }
         public string EngineType { get; set; }
