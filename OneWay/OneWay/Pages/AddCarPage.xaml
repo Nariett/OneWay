@@ -176,7 +176,7 @@
             <StackPanel Grid.Column="1">
                 <TextBlock Text="Настройки" FontSize ="25" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,0"/>
                 <TextBlock Text="Заполнение полей" FontSize ="20" Foreground="{DynamicResource TextSecundaryColor}" Margin="10,10,10,0"/>
-                <ComboBox Grid.Row="16" Grid.Column="1" x:Name="Fill" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 5 6" SelectionChanged="Fill_SelectionChanged" >
+                <ComboBox Grid.Row="16" Grid.Column="1" x:Name="Fill" FontSize="18" Height="35" Foreground="{DynamicResource TextSecundaryColor}" Margin="10 0 5 6" SelectionChanged="Fill_SelectionChanged" SelectedIndex="0" >
                     <ComboBoxItem Content="Ручное"/>
                     <ComboBoxItem Content="Автоматическое"/>
                 </ComboBox>

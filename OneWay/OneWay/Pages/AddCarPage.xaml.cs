@@ -27,7 +27,7 @@ namespace OneWay.Pages
         public List<Tuple<string, string>> carModel;
         public List<Tuple<string, string>> carGeneration;
         public List<Tuple<string, string>> carEquipment;
-        public Dictionary<string, string> CountryTranslations = new Dictionary<string, string>()
+        public Dictionary<string, string> countryTranslations = new Dictionary<string, string>()
         {
             { "no", "Для мира" },
             { "russia", "Для России" },
@@ -44,19 +44,11 @@ namespace OneWay.Pages
         public AddCarPage(int IdUser)
         {
             InitializeComponent();
-            Body.SelectedIndex = -1;
-            Drive.SelectedIndex = -1;
-            GearBox.SelectedIndex = -1;
-            EngineType.SelectedIndex = -1;
-            Fuel.SelectedIndex = -1;
-            OctaneNumber.SelectedIndex = -1;
-            Conditioner.SelectedIndex = -1;
-            Fill.SelectedIndex = 0;
             this.IdUser = IdUser;
         }
         private async void Fill_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Fill.SelectedIndex == 1) // авто
+            if (Fill.SelectedIndex == 1) // автоматическое заполение полей
             {
                 ClearField();
                 newCar = new Car();
@@ -74,7 +66,7 @@ namespace OneWay.Pages
                     CarEquipment.Visibility = Visibility.Collapsed;
                     Button_Web.Visibility = Visibility.Visible;
 
-                    carName = await GetCarData("https://www.drom.ru/catalog/", "//div[@class='css-1dk948p ehmqafe0']");////
+                    carName = await GetCarData("https://www.drom.ru/catalog/", "//div[@data-ftid='component_cars-list']");
                     carName = carName.OrderBy(t => t.Item1).ToList();
                     if(carName.Count != 0)
                     {
@@ -98,11 +90,11 @@ namespace OneWay.Pages
                 }
 
             }
-            else // ручное
+            else // ручное заполнение полей
             {
                 ClearField();
-                newCar = new Car();
                 UnBlockField();
+                newCar = new Car();
                 ComboBoxCarBrand.Visibility = Visibility.Collapsed;
                 CarBrand.Visibility = Visibility.Visible;
                 ComboBoxCarModel.Visibility = Visibility.Collapsed;
@@ -164,6 +156,30 @@ namespace OneWay.Pages
             Fuel.SelectedIndex = -1;
             Volume.Text = "";
         }
+        public void ClearComboBox(ComboBox startingComboBox)
+        {
+            bool foundStartingComboBox = false;
+
+            List<ComboBox> allComboBoxes = new List<ComboBox>
+            {
+                ComboBoxCarBrand,
+                ComboBoxCarModel,
+                ComboBoxCarGeneration,
+                ComboBoxCarEquipment
+            };
+            foreach (var comboBox in allComboBoxes)
+            {
+                if (foundStartingComboBox)
+                {
+                    comboBox.Items.Clear();
+                }
+
+                if (comboBox == startingComboBox)
+                {
+                    foundStartingComboBox = true;
+                }
+            }
+        }
 
         private async void ComboBoxCarBrand_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -171,11 +187,9 @@ namespace OneWay.Pages
             if (index != -1)
             {
                 ClearField();
-                this.ComboBoxCarModel.Items.Clear();
-                this.ComboBoxCarGeneration.Items.Clear();
-                this.ComboBoxCarEquipment.Items.Clear();
+                ClearComboBox(ComboBoxCarBrand);
                 selectUrl = carName[index].Item2;
-                carModel = await GetCarData(selectUrl, "//div[@class='css-1dk948p ehmqafe0']");
+                carModel = await GetCarData(selectUrl, "//div[@data-ftid='component_cars-list']");
                 if (carModel.Count != 0)
                 {
                     carModel = carModel.OrderBy(t => t.Item1).ToList();
@@ -191,14 +205,14 @@ namespace OneWay.Pages
             }
         }
 
+
         private async void ComboBoxCarModel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = this.ComboBoxCarModel.SelectedIndex;
             if (index != -1)
             {
                 ClearField();
-                this.ComboBoxCarGeneration.Items.Clear();
-                this.ComboBoxCarEquipment.Items.Clear();
+                ClearComboBox(ComboBoxCarModel);
                 selectUrl = carModel[index].Item2;
                 carGeneration = await GetCarGeneration(selectUrl, "//div[@class='css-10ib5jr']");
                 if (carGeneration.Count != 0)
@@ -221,7 +235,7 @@ namespace OneWay.Pages
             if (index != -1)
             {
                 ClearField();
-                this.ComboBoxCarEquipment.Items.Clear();
+                ClearComboBox(ComboBoxCarGeneration);
                 string url = selectUrl + carGeneration[index].Item2;
                 carEquipment = await GetCarEquipment(url, "//table[@class='b-table b-table_text-left']");
                 carEquipment.RemoveAll(t => string.IsNullOrEmpty(t.Item1) | t.Item2.Contains("engine") | t.Item2.Contains("#"));
@@ -326,7 +340,7 @@ namespace OneWay.Pages
                         {
                             HtmlNodeCollection countryDivTexts = countryDivNode.SelectNodes("div[@class = 'css-112idg0 e1ei9t6a3']");
                             string countryCode = countryDivTexts[0].GetAttributeValue("id", "");
-                            string countryName = CountryTranslations.ContainsKey(countryCode) ? CountryTranslations[countryCode] : "";
+                            string countryName = countryTranslations.ContainsKey(countryCode) ? countryTranslations[countryCode] : "";
                             HtmlNodeCollection carDivs = countryDivNode.SelectNodes("div[@class = 'css-kumxje e1naoij51']");
                             foreach (HtmlNode BlockWithCar in carDivs)
                             {
@@ -426,20 +440,18 @@ namespace OneWay.Pages
             }
             return data;
         }
-        public string GetAllData(string url, string xpath)
+        public void GetAllData(string url, string xpath)
         {
-            string data = "";
             List<Tuple<string, string>> info = new List<Tuple<string, string>>();
             try
             {
-
                 HtmlWeb webGet = new HtmlWeb();
                 HtmlDocument document = webGet.Load(url);
 
                 HtmlNode parentDivNode = document.DocumentNode.SelectSingleNode(xpath);
                 if (parentDivNode == null)
                 {
-                    return "";
+                    return;
                 }
                 HtmlNodeCollection anchorNodes = parentDivNode.SelectNodes(".//td");
                 if (anchorNodes != null)
@@ -456,7 +468,6 @@ namespace OneWay.Pages
                         }
                         if (!IsIgnoredText(text))
                         {
-                            data += text;
                             if (skipFirst)
                             {
                                 key = text;
@@ -490,7 +501,6 @@ namespace OneWay.Pages
                                                 x.Item1 == "Запас хода на электротяге в км" ||
                                                 x.Item1 == "Ёмкость батареи, кВт*ч"
                                                 ).ToList(); 
-            string textInfo = "";
             if (filteredItems.Any(x => x.Item1 == "Ёмкость батареи, кВт*ч") & filteredItems.Any(x => x.Item1 == "Используемое топливо" && x.Item2 == "Электричество"))
             {
                 ClearField();
@@ -953,7 +963,7 @@ namespace OneWay.Pages
                     newCar.MaxSpeed = 150;
                 }
             }
-            return textInfo;
+            return;
         }
         private bool IsIgnoredText(string text)
         {
