@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 using OneWay.Controls;
 using System.Net.NetworkInformation;
+using Microsoft.Win32.SafeHandles;
 
 namespace OneWay.Pages
 {
@@ -27,7 +28,7 @@ namespace OneWay.Pages
         public List<Tuple<string, string>> carModel;
         public List<Tuple<string, string>> carGeneration;
         public List<Tuple<string, string>> carEquipment;
-        public Dictionary<string, string> CountryTranslations = new Dictionary<string, string>()
+        public Dictionary<string, string> countryTranslations = new Dictionary<string, string>()
         {
             { "no", "Для мира" },
             { "russia", "Для России" },
@@ -44,19 +45,11 @@ namespace OneWay.Pages
         public AddCarPage(int IdUser)
         {
             InitializeComponent();
-            Body.SelectedIndex = -1;
-            Drive.SelectedIndex = -1;
-            GearBox.SelectedIndex = -1;
-            EngineType.SelectedIndex = -1;
-            Fuel.SelectedIndex = -1;
-            OctaneNumber.SelectedIndex = -1;
-            Conditioner.SelectedIndex = -1;
-            Fill.SelectedIndex = 0;
             this.IdUser = IdUser;
         }
         private async void Fill_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Fill.SelectedIndex == 1) // авто
+            if (Fill.SelectedIndex == 1) // автоматическое заполение полей
             {
                 ClearField();
                 newCar = new Car();
@@ -74,7 +67,7 @@ namespace OneWay.Pages
                     CarEquipment.Visibility = Visibility.Collapsed;
                     Button_Web.Visibility = Visibility.Visible;
 
-                    carName = await GetCarData("https://www.drom.ru/catalog/", "//div[@class='css-1dk948p ehmqafe0']");////
+                    carName = await GetCarData("https://www.drom.ru/catalog/", "//div[@data-ftid='component_cars-list']");
                     carName = carName.OrderBy(t => t.Item1).ToList();
                     if(carName.Count != 0)
                     {
@@ -98,11 +91,11 @@ namespace OneWay.Pages
                 }
 
             }
-            else // ручное
+            else // ручное заполнение полей
             {
                 ClearField();
-                newCar = new Car();
                 UnBlockField();
+                newCar = new Car();
                 ComboBoxCarBrand.Visibility = Visibility.Collapsed;
                 CarBrand.Visibility = Visibility.Visible;
                 ComboBoxCarModel.Visibility = Visibility.Collapsed;
@@ -162,7 +155,31 @@ namespace OneWay.Pages
             }
             OctaneNumber.SelectedIndex = -1;
             Fuel.SelectedIndex = -1;
-            Volume.Text = "";
+            //Volume.Text = "";
+        }
+        public void ClearComboBox(ComboBox startingComboBox)
+        {
+            bool foundStartingComboBox = false;
+
+            List<ComboBox> allComboBoxes = new List<ComboBox>
+            {
+                ComboBoxCarBrand,
+                ComboBoxCarModel,
+                ComboBoxCarGeneration,
+                ComboBoxCarEquipment
+            };
+            foreach (var comboBox in allComboBoxes)
+            {
+                if (foundStartingComboBox)
+                {
+                    comboBox.Items.Clear();
+                }
+
+                if (comboBox == startingComboBox)
+                {
+                    foundStartingComboBox = true;
+                }
+            }
         }
 
         private async void ComboBoxCarBrand_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -171,11 +188,9 @@ namespace OneWay.Pages
             if (index != -1)
             {
                 ClearField();
-                this.ComboBoxCarModel.Items.Clear();
-                this.ComboBoxCarGeneration.Items.Clear();
-                this.ComboBoxCarEquipment.Items.Clear();
+                ClearComboBox(ComboBoxCarBrand);
                 selectUrl = carName[index].Item2;
-                carModel = await GetCarData(selectUrl, "//div[@class='css-1dk948p ehmqafe0']");
+                carModel = await GetCarData(selectUrl, "//div[@data-ftid='component_cars-list']");
                 if (carModel.Count != 0)
                 {
                     carModel = carModel.OrderBy(t => t.Item1).ToList();
@@ -191,14 +206,14 @@ namespace OneWay.Pages
             }
         }
 
+
         private async void ComboBoxCarModel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = this.ComboBoxCarModel.SelectedIndex;
             if (index != -1)
             {
                 ClearField();
-                this.ComboBoxCarGeneration.Items.Clear();
-                this.ComboBoxCarEquipment.Items.Clear();
+                ClearComboBox(ComboBoxCarModel);
                 selectUrl = carModel[index].Item2;
                 carGeneration = await GetCarGeneration(selectUrl, "//div[@class='css-10ib5jr']");
                 if (carGeneration.Count != 0)
@@ -221,7 +236,7 @@ namespace OneWay.Pages
             if (index != -1)
             {
                 ClearField();
-                this.ComboBoxCarEquipment.Items.Clear();
+                ClearComboBox(ComboBoxCarGeneration);
                 string url = selectUrl + carGeneration[index].Item2;
                 carEquipment = await GetCarEquipment(url, "//table[@class='b-table b-table_text-left']");
                 carEquipment.RemoveAll(t => string.IsNullOrEmpty(t.Item1) | t.Item2.Contains("engine") | t.Item2.Contains("#"));
@@ -326,7 +341,7 @@ namespace OneWay.Pages
                         {
                             HtmlNodeCollection countryDivTexts = countryDivNode.SelectNodes("div[@class = 'css-112idg0 e1ei9t6a3']");
                             string countryCode = countryDivTexts[0].GetAttributeValue("id", "");
-                            string countryName = CountryTranslations.ContainsKey(countryCode) ? CountryTranslations[countryCode] : "";
+                            string countryName = countryTranslations.ContainsKey(countryCode) ? countryTranslations[countryCode] : "";
                             HtmlNodeCollection carDivs = countryDivNode.SelectNodes("div[@class = 'css-kumxje e1naoij51']");
                             foreach (HtmlNode BlockWithCar in carDivs)
                             {
@@ -426,20 +441,19 @@ namespace OneWay.Pages
             }
             return data;
         }
-        public string GetAllData(string url, string xpath)
+        public void GetAllData(string url, string xpath)
         {
-            string data = "";
+            bool hybrid = false;
             List<Tuple<string, string>> info = new List<Tuple<string, string>>();
             try
             {
-
                 HtmlWeb webGet = new HtmlWeb();
                 HtmlDocument document = webGet.Load(url);
 
                 HtmlNode parentDivNode = document.DocumentNode.SelectSingleNode(xpath);
                 if (parentDivNode == null)
                 {
-                    return "";
+                    return;
                 }
                 HtmlNodeCollection anchorNodes = parentDivNode.SelectNodes(".//td");
                 if (anchorNodes != null)
@@ -454,9 +468,14 @@ namespace OneWay.Pages
                         {
                             text = "Есть";
                         }
+                        string value = svg;
+                        if(value.Contains("&mdash;") && key == "Гибридный автомобиль")
+                        {
+                            hybrid = true;
+                            text = "Нет";
+                        }
                         if (!IsIgnoredText(text))
                         {
-                            data += text;
                             if (skipFirst)
                             {
                                 key = text;
@@ -489,471 +508,230 @@ namespace OneWay.Pages
                                                 x.Item1 == "Расход топлива в смешанном цикле, л/100 км" ||
                                                 x.Item1 == "Запас хода на электротяге в км" ||
                                                 x.Item1 == "Ёмкость батареи, кВт*ч"
-                                                ).ToList(); 
-            string textInfo = "";
-            if (filteredItems.Any(x => x.Item1 == "Ёмкость батареи, кВт*ч") & filteredItems.Any(x => x.Item1 == "Используемое топливо" && x.Item2 == "Электричество"))
-            {
-                ClearField();
-                newCar = new Car();
-                Conditioner.SelectedIndex = 0;
-                EngineType.SelectedIndex = 1;
-                FuelConsumption.Text = null;
-                newCar.Brand = ComboBoxCarBrand.SelectedItem.ToString();
-                newCar.Model = ComboBoxCarModel.SelectedItem.ToString();
-                newCar.Generation = ComboBoxCarGeneration.SelectedItem.ToString().Split('\r')[0];
-                newCar.Equipment = ComboBoxCarEquipment.SelectedItem.ToString();
-                newCar.EngineType = "Электрический";
-                EngineType.SelectedIndex = 1;
-                TextVolume.Visibility = Visibility.Collapsed;
-                Volume.Visibility = Visibility.Collapsed;
-                TextFuelConsumption.Text = "Расход батареии, кВт*ч/км";
-                foreach (var item in filteredItems)
-                {
-                    switch (item.Item1)
-                    {
-                        case "Период выпуска":
-                            string patternNumber = @"\b\d{4}\b";
-                            Regex regexNumber = new Regex(patternNumber);
-                            MatchCollection matchesNumber = regexNumber.Matches(item.Item2);
-                            if (matchesNumber.Count == 2)
-                            {
-                                Year.Text = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
-                                newCar.Year = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
-                            }
-                            else
-                            {
-                                Year.Text = $"{matchesNumber[0].Value} - н.в.";
-                                newCar.Year = $"{matchesNumber[0].Value} - н.в.";
-                            }
-                            break;
-                        case "Тип привода":
-                            SelectComboBoxItemByText(Drive, item.Item2.Split(' ')[0]);
-                            newCar.Drive = item.Item2.Split(' ')[0];
-                            break;
-                        case "Тип кузова":
-                            string body = "";
-                            if (item.Item2 == "SUV")
-                            {
-                                body = "Внедорожник";
-                            }
-                            else if (item.Item2 == "Открытый кузов")
-                            {
-                                body = "Кабриолет";
-                            }
-                            else
-                            {
-                                body = item.Item2.Split(' ')[0];
-                            }
-                            SelectComboBoxItemByText(Body, body);
-                            newCar.Body = body;
-                            break;
-                        case "Тип трансмиссии":
-                            string gearBox = item.Item2.Split(' ')[0];
-                            if (gearBox == "РКПП" | gearBox == "АКПП" | gearBox == "Вариатор" | gearBox == "Редуктор")
-                            {
-                                GearBox.SelectedIndex = 0;
-                                gearBox = "АКПП";
-                            }
-                            else if (gearBox == "МКПП")
-                            {
-                                GearBox.SelectedIndex = 1;
-                                gearBox = "МКПП";
-                            }
-                            newCar.GearBox = gearBox;
-                            break;
-                        case "Максимальная скорость, км/ч":
-                            MaxSpeed.Text = item.Item2;
-                            newCar.MaxSpeed = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Число дверей":
-                            Doors.Text = item.Item2;
-                            newCar.Doors = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Число мест":
-                            Seats.Text = item.Item2;
-                            newCar.Seats = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Используемое топливо":
-                            TextOctaneNumber.Visibility = Visibility.Collapsed;
-                            OctaneNumber.Visibility = Visibility.Collapsed;
-                            Fuel.SelectedIndex = 2;
-                            OctaneNumber.SelectedIndex = -1;
-                            newCar.Fuel = "Электричество";
-                            break;
-                        case "Кондиционер":
-                            if (item.Item2 == "Есть")
-                            {
-                                Conditioner.SelectedIndex = 1;
-                                newCar.Conditioner = "Есть";
-                            }
-                            else
-                            {
-                                Conditioner.SelectedIndex = 0;
-                                newCar.Conditioner = "Нет";
-                            }
-                            break;
-                        case "Расход топлива в смешанном цикле, л/100 км":
-                            FuelConsumption.Text = item.Item2;
-                            newCar.FuelConsumption = Convert.ToDouble(item.Item2.ToString());
-                            break;
-                        case "Ёмкость батареи, кВт*ч":
-                            BatteryCapacity.Text = item.Item2;
-                            newCar.BatteryCapacity = Convert.ToDouble(item.Item2.Replace('.',','));
-                            break;
-                        case "Запас хода на электротяге в км":
-                            TextBlockRangePerCharge.Visibility = Visibility.Visible;
-                            RangePerCharge.Visibility = Visibility.Visible;
-                            RangePerCharge.Text = item.Item2;
-                            newCar.RangePerCharge = Convert.ToDouble(item.Item2);
-                            break;
-                    }
-                }
-                if (newCar.MaxSpeed == null)
-                {
-                    MaxSpeed.Text = 150.ToString();
-                    newCar.MaxSpeed = 150;
-                }
-                double fuelConsumption = Math.Round(Convert.ToDouble(BatteryCapacity.Text.Replace('.',',')) / Convert.ToDouble(RangePerCharge.Text), 2);
-                FuelConsumption.Text = fuelConsumption.ToString();
-                newCar.FuelConsumption = fuelConsumption;
-            }
-            if ((!filteredItems.Any(x => x.Item1 == "Ёмкость батареи, кВт*ч")) & filteredItems.Any(x => x.Item1 == "Используемое топливо" && (x.Item2.Contains("Бензин") | x.Item2.Contains("Дизельное топливо") | x.Item2.Contains("Природный газ") | x.Item2.Contains("Газ/бензин"))))
-            {
-                ClearField();
-                newCar = new Car();
-                Conditioner.SelectedIndex = 0;
-                EngineType.SelectedIndex = 0;
-                FuelConsumption.Text = null;
-                TextFuelConsumption.Text = "Расход топлива в смешанном цикле, л/100 км";
-                newCar.Brand = ComboBoxCarBrand.SelectedItem.ToString();
-                newCar.Model = ComboBoxCarModel.SelectedItem.ToString();
-                newCar.Generation = ComboBoxCarGeneration.SelectedItem.ToString().Split('\r')[0];
-                newCar.Equipment = ComboBoxCarEquipment.SelectedItem.ToString();
-                newCar.EngineType = "ДВС";
-                foreach (var item in filteredItems)
-                {
-                    switch (item.Item1)
-                    {
-                        case "Период выпуска":
-                            string patternNumber = @"\b\d{4}\b";
-                            Regex regexNumber = new Regex(patternNumber);
-                            MatchCollection matchesNumber = regexNumber.Matches(item.Item2);
-                            if(matchesNumber.Count == 2)
-                            {
-                                Year.Text = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
-                                newCar.Year = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
-                            }
-                            else
-                            {
-                                Year.Text = $"{matchesNumber[0].Value} - н.в.";
-                                newCar.Year = $"{matchesNumber[0].Value} - н.в.";
-                            }
-                            break;
-                        case "Тип привода":
-                            SelectComboBoxItemByText(Drive, item.Item2.Split(' ')[0]);
-                            newCar.Drive = item.Item2.Split(' ')[0];
-                            break;
-                        case "Тип кузова":
-                            string body = "";
-                            if( item.Item2 == "SUV")
-                            {
-                                body = "Внедорожник";
-                            } else if( item.Item2 == "Открытый кузов")
-                            {
-                                body = "Кабриолет";
-                            }
-                            else
-                            {
-                                body = item.Item2.Split(' ')[0];
-                            }
-                            SelectComboBoxItemByText(Body, body);
-                            newCar.Body = body;
-                            break;
-                        case "Тип трансмиссии":
-                            string gearBox = item.Item2.Split(' ')[0];
-                            if (gearBox == "РКПП" | gearBox == "АКПП" | gearBox == "Вариатор" | gearBox == "Редуктор")
-                            {
-                                GearBox.SelectedIndex = 0;
-                                gearBox = "АКПП";
-                            }
-                            else if (gearBox == "МКПП")
-                            {
-                                GearBox.SelectedIndex = 1;
-                                gearBox = "МКПП";
-                            }
-                            newCar.GearBox = gearBox;
-                            break;
-                        case "Максимальная скорость, км/ч":
-                            MaxSpeed.Text = item.Item2;
-                            newCar.MaxSpeed = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Объем двигателя, куб.см":
-                            TextVolume.Visibility = Visibility.Visible;
-                            Volume.Visibility = Visibility.Visible;
-                            Volume.Text = item.Item2;
-                            newCar.Volume = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Число дверей":
-                            Doors.Text = item.Item2;
-                            newCar.Doors = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Число мест":
-                            Seats.Text = item.Item2;
-                            newCar.Seats = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Используемое топливо":
-                            string[] fuelParts = item.Item2.Split(' ');
-                            if (item.Item2.Contains("Бензин"))
-                            {
-                                newCar.Fuel = "Бензин";
-                                Fuel.SelectedIndex = 0;
-                                if (fuelParts.Length >= 2)
-                                {
-                                    string patternOctaneNumber = @"АИ-\d+";
-                                    Regex regexOctaneNumber = new Regex(patternOctaneNumber);
-                                    MatchCollection matches = regexOctaneNumber.Matches(item.Item2);
-                                    if (matches.Count != 0)
-                                    {
-                                        int index = octaneNumber.FindIndex(x => x.octaneNumber == matches[0].ToString());
-                                        OctaneNumber.SelectedIndex = index;
-                                        newCar.FuelOctane = octaneNumber[index].id;
-                                    }
-                                    else
-                                    {
-                                        int index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
-                                        OctaneNumber.SelectedIndex = index; 
-                                        newCar.FuelOctane = octaneNumber[index].id;
-                                    }
-                                }
-                                else
-                                {
-                                    int index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
-                                    OctaneNumber.SelectedIndex = index;
-                                    newCar.FuelOctane = octaneNumber[index].id;
-                                }
-                            }
-                            else if (item.Item2.Contains("Дизельное топливо"))
-                            {
-                                TextOctaneNumber.Visibility = Visibility.Collapsed;
-                                OctaneNumber.Visibility = Visibility.Collapsed;
-                                Fuel.SelectedIndex = 1;
-                                OctaneNumber.SelectedIndex = -1;
-                                newCar.Fuel = "Дизельное топливо";
-                                newCar.FuelOctane = null;
-                            }
-                            else if (item.Item2.Contains("Природный газ") | item.Item2.Contains("Газ/бензин"))
-                            {
-                                TextOctaneNumber.Visibility = Visibility.Collapsed;
-                                OctaneNumber.Visibility = Visibility.Collapsed;
-                                Fuel.SelectedIndex = 3;
-                                OctaneNumber.SelectedIndex = 0;
-                                newCar.Fuel = "Газ";
-                                newCar.FuelOctane = null;
-                            }
-                            break;
-                        case "Кондиционер":
-                            if (item.Item2 == "Есть")
-                            {
-                                Conditioner.SelectedIndex = 1;
-                                newCar.Conditioner = "Есть";
-                            }
-                            else
-                            {
-                                Conditioner.SelectedIndex = 0;
-                                newCar.Conditioner = "Нет";
-                            }
-                            break;
-                        case "Расход топлива в смешанном цикле, л/100 км":
-                            FuelConsumption.Text = item.Item2;
-                            newCar.FuelConsumption = Convert.ToDouble(item.Item2.ToString());
-                            break;
-                    }
-                }
-                if (newCar.MaxSpeed == null)
-                {
-                    MaxSpeed.Text = 150.ToString();
-                    newCar.MaxSpeed = 150;
-                }
-            }
-            if (filteredItems.Any(x => x.Item1 == "Ёмкость батареи, кВт*ч") & filteredItems.Any(x => x.Item1 == "Используемое топливо" && (x.Item2.Contains("Бензин") | x.Item2.Contains("Дизельное топливо")))) 
-            {
-                ClearField();
-                newCar = new Car();
-                Conditioner.SelectedIndex = 0;
-                EngineType.SelectedIndex = 2;
-                FuelConsumption.Text = null;
-                TextFuelConsumption.Text = "Расход топлива в смешанном цикле, л/100 км";
-                newCar.Brand = ComboBoxCarBrand.SelectedItem.ToString();
-                newCar.Model = ComboBoxCarModel.SelectedItem.ToString();
-                newCar.Generation = ComboBoxCarGeneration.SelectedItem.ToString().Split('\r')[0];
-                newCar.Equipment = ComboBoxCarEquipment.SelectedItem.ToString();
-                newCar.EngineType = "Гибрид";
-                bool rangeFound = false;
-                foreach (var item in filteredItems)
-                {
-                    switch (item.Item1)
-                    {
-                        case "Период выпуска":
-                            string patternNumber = @"\b\d{4}\b";
-                            Regex regexNumber = new Regex(patternNumber);
-                            MatchCollection matchesNumber = regexNumber.Matches(item.Item2);
-                            if (matchesNumber.Count == 2)
-                            {
-                                Year.Text = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
-                                newCar.Year = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
-                            }
-                            else
-                            {
-                                Year.Text = $"{matchesNumber[0].Value} - н.в.";
-                                newCar.Year = $"{matchesNumber[0].Value} - н.в.";
-                            }
-                            break;
-                        case "Тип привода":
-                            SelectComboBoxItemByText(Drive, item.Item2.Split(' ')[0]);
-                            newCar.Drive = item.Item2.Split(' ')[0];
-                            break;
-                        case "Тип кузова":
-                            string body = "";
-                            if (item.Item2 == "SUV")
-                            {
-                                body = "Внедорожник";
-                            }
-                            else if (item.Item2 == "Открытый кузов")
-                            {
-                                body = "Кабриолет";
-                            }
-                            else
-                            {
-                                body = item.Item2.Split(' ')[0];
-                            }
-                            SelectComboBoxItemByText(Body, body);
-                            newCar.Body = body;
-                            break;
-                        case "Тип трансмиссии":
-                            string gearBox = item.Item2.Split(' ')[0];
-                            if (gearBox == "РКПП" | gearBox == "АКПП" | gearBox == "Вариатор" | gearBox == "Редуктор")
-                            {
-                                GearBox.SelectedIndex = 0;
-                                gearBox = "AКПП";
-                            }
-                            else if (gearBox == "МКПП")
-                            {
-                                GearBox.SelectedIndex = 1;
-                                gearBox = "МКПП";
-                            }
-                            newCar.GearBox = gearBox;
-                            break;
-                        case "Максимальная скорость, км/ч":
-                            MaxSpeed.Text = item.Item2;
-                            newCar.MaxSpeed = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Объем двигателя, куб.см":
-                            TextVolume.Visibility = Visibility.Visible;
-                            Volume.Visibility = Visibility.Visible;
-                            Volume.Text = item.Item2;
-                            newCar.Volume = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Число дверей":
-                            Doors.Text = item.Item2;
-                            newCar.Doors = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Число мест":
-                            Seats.Text = item.Item2;
-                            newCar.Seats = Convert.ToInt32(item.Item2);
-                            break;
-                        case "Используемое топливо":
-                            string[] fuelParts = item.Item2.Split(' ');
-                            if (item.Item2.Contains("Бензин"))
-                            {
-                                newCar.Fuel = "Бензин";
-                                Fuel.SelectedIndex = 0;
-                                if (fuelParts.Length >= 2)
-                                {
-                                    string patternOctaneNumber = @"АИ-\d+";
-                                    Regex regexOctaneNumber = new Regex(patternOctaneNumber);
-                                    MatchCollection matches = regexOctaneNumber.Matches(item.Item2);
-                                    if (matches.Count != 0)
-                                    {
-                                        int index = octaneNumber.FindIndex(x => x.octaneNumber == matches[0].ToString());
-                                        OctaneNumber.SelectedIndex = index;
-                                        newCar.FuelOctane = octaneNumber[index].id;
-                                    }
-                                    else
-                                    {
-                                        int index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
-                                        OctaneNumber.SelectedIndex = index;
-                                        newCar.FuelOctane = octaneNumber[index].id;
-                                    }
-                                }
-                                else
-                                {
-                                    int index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
-                                    OctaneNumber.SelectedIndex = index;
-                                    newCar.FuelOctane = octaneNumber[index].id;
-                                }
+                                                ).ToList();
 
-                            }
-                            else if (item.Item2.Contains("Дизельное топливо"))
-                            {
+            ClearField();
+            newCar = new Car();
+            newCar.Brand = ComboBoxCarBrand.SelectedItem.ToString();
+            newCar.Model = ComboBoxCarModel.SelectedItem.ToString();
+            newCar.Generation = ComboBoxCarGeneration.SelectedItem.ToString().Split('\r')[0];
+            newCar.Equipment = ComboBoxCarEquipment.SelectedItem.ToString();
+            foreach (var item in filteredItems)
+            {
+                switch (item.Item1)
+                {
+                    case "Период выпуска":
+                        string patternNumber = @"\b\d{4}\b";
+                        Regex regexNumber = new Regex(patternNumber);
+                        MatchCollection matchesNumber = regexNumber.Matches(item.Item2);
+                        if (matchesNumber.Count == 2)
+                        {
+                            Year.Text = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
+                            newCar.Year = $"{matchesNumber[0].Value} - {matchesNumber[1].Value}";
+                        }
+                        else
+                        {
+                            Year.Text = $"{matchesNumber[0].Value} - н.в.";
+                            newCar.Year = $"{matchesNumber[0].Value} - н.в.";
+                        }
+                        break;
+                    case "Тип привода":
+                        SelectComboBoxItemByText(Drive, item.Item2.Split(' ')[0]);
+                        newCar.Drive = item.Item2.Split(' ')[0];
+                        break;
+                    case "Тип кузова":
+                        string body = "";
+                        if (item.Item2 == "SUV")
+                        {
+                            body = "Внедорожник";
+                        }
+                        else if (item.Item2 == "Открытый кузов")
+                        {
+                            body = "Кабриолет";
+                        }
+                        else
+                        {
+                            body = item.Item2.Split(' ')[0];
+                        }
+                        SelectComboBoxItemByText(Body, body);
+                        newCar.Body = body;
+                        break;
+                    case "Тип трансмиссии":
+                        string gearBox = item.Item2.Split(' ')[0];
+                        if (gearBox == "РКПП" | gearBox == "АКПП" | gearBox == "Вариатор" | gearBox == "Редуктор")
+                        {
+                            GearBox.SelectedIndex = 0;
+                            gearBox = "АКПП";
+                        }
+                        else if (gearBox == "МКПП")
+                        {
+                            GearBox.SelectedIndex = 1;
+                            gearBox = "МКПП";
+                        }
+                        newCar.GearBox = gearBox;
+                        break;
+                    case "Максимальная скорость, км/ч":
+                        MaxSpeed.Text = item.Item2;
+                        newCar.MaxSpeed = Convert.ToInt32(item.Item2);
+                        break;
+                    case "Объем двигателя, куб.см":
+                        TextVolume.Visibility = Visibility.Visible;
+                        Volume.Visibility = Visibility.Visible;
+                        Volume.Text = item.Item2;
+                        newCar.Volume = Convert.ToInt32(item.Item2);
+                        break;
+                    case "Число дверей":
+                        Doors.Text = item.Item2;
+                        newCar.Doors = Convert.ToInt32(item.Item2);
+                        break;
+                    case "Число мест":
+                        Seats.Text = item.Item2;
+                        newCar.Seats = Convert.ToInt32(item.Item2);
+                        break;
+                    case "Используемое топливо":
+                        string fuelInfo = filteredItems.Where(x => x.Item1 == "Используемое топливо").Select(x => x.Item2).FirstOrDefault();
+                        string fuel = fuelInfo.Split(' ')[0];
+                        switch(fuel)
+                        {
+                            case "Бензин":
+                                TextFuelConsumption.Text = "Расход топлива в смешанном цикле, л/100 км";
+                                newCar.Fuel = "Бензин";
+                                EngineType.SelectedIndex = 0;
+                                newCar.EngineType = "ДВС";
+                                Fuel.SelectedIndex = 0;
+                                string[] fuelParts = item.Item2.Split(' ');
+                                if (fuelParts.Length >= 2)
+                                {
+                                    string patternOctaneNumber = @"АИ-\d+";
+                                    Regex regexOctaneNumber = new Regex(patternOctaneNumber);
+                                    MatchCollection matches = regexOctaneNumber.Matches(item.Item2);
+                                    if (matches.Count != 0)
+                                    {
+                                        int index = octaneNumber.FindIndex(x => x.octaneNumber == matches[0].ToString());
+                                        if(index != -1)
+                                        {
+                                            OctaneNumber.SelectedIndex = index;
+                                            newCar.FuelOctane = octaneNumber[index].id;
+                                        }
+                                        else
+                                        {
+                                            index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
+                                            OctaneNumber.SelectedIndex = index;
+                                            newCar.FuelOctane = octaneNumber[index].id;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        int index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
+                                        OctaneNumber.SelectedIndex = index;
+                                        newCar.FuelOctane = octaneNumber[index].id;
+                                    }
+                                }
+                                // сделать от года выпуска
+                                else
+                                {
+                                    int index = octaneNumber.FindIndex(x => x.octaneNumber == "АИ-95");
+                                    OctaneNumber.SelectedIndex = index;
+                                    newCar.FuelOctane = octaneNumber[index].id;
+                                }
+                                break;
+                            case "Дизельное топливо":
+                                TextFuelConsumption.Text = "Расход топлива в смешанном цикле, л/100 км";
+                                EngineType.SelectedIndex = 0;
+                                newCar.EngineType = "ДВС";
                                 TextOctaneNumber.Visibility = Visibility.Collapsed;
                                 OctaneNumber.Visibility = Visibility.Collapsed;
                                 Fuel.SelectedIndex = 1;
                                 OctaneNumber.SelectedIndex = -1;
                                 newCar.Fuel = "Дизельное топливо";
                                 newCar.FuelOctane = null;
-                            }
-                            else if (item.Item2.Contains("Природный газ") | item.Item2.Contains("Газ/бензин"))
-                            {
+                                break;
+                            case "Электричество":
+                                EngineType.SelectedIndex = 1;
+                                newCar.EngineType = "Электрический";
                                 TextOctaneNumber.Visibility = Visibility.Collapsed;
                                 OctaneNumber.Visibility = Visibility.Collapsed;
                                 Fuel.SelectedIndex = 3;
                                 OctaneNumber.SelectedIndex = 0;
                                 newCar.Fuel = "Газ";
                                 newCar.FuelOctane = null;
-                            }
-                            break;
-                        case "Кондиционер":
-                            if (item.Item2 == "Есть")
-                            {
-                                Conditioner.SelectedIndex = 1;
-                                newCar.Conditioner = "Есть";
-                            }
-                            else
-                            {
-                                Conditioner.SelectedIndex = 0;
-                                newCar.Conditioner = "Нет";
-                            }
-                            break;
-                        case "Расход топлива в смешанном цикле, л/100 км":
-                            FuelConsumption.Text = item.Item2;
-                            newCar.FuelConsumption = Convert.ToDouble(item.Item2.ToString());
-                            break;
-                        case "Ёмкость батареи, кВт*ч":
-                            BatteryCapacity.Text = item.Item2;
-                            newCar.BatteryCapacity = Convert.ToDouble(item.Item2);
-                            break;
-                        case "Запас хода на электротяге в км"://гибрид
-                            TextBlockRangePerCharge.Visibility = Visibility.Visible;
-                            RangePerCharge.Visibility = Visibility.Visible;
-                            RangePerCharge.Text = item.Item2;
-                            newCar.RangePerCharge = Convert.ToDouble(item.Item2);
-                            rangeFound = true;
-                            break;
-                    }
-                }
-                if (!rangeFound)
-                {
-                    TextBlockRangePerCharge.Text = "";
-                    TextBlockRangePerCharge.Visibility = Visibility.Collapsed;
-                    RangePerCharge.Visibility = Visibility.Collapsed;
-                }
-                if (newCar.MaxSpeed == null)
-                {
-                    MaxSpeed.Text = 150.ToString();
-                    newCar.MaxSpeed = 150;
+                                TextVolume.Visibility = Visibility.Collapsed;
+                                Volume.Visibility = Visibility.Collapsed;
+                                if(BatteryCapacity.Text != "")
+                                {
+                                    TextFuelConsumption.Text = "Расход батареии, кВт*ч/км";
+                                    double fuelConsumption = Math.Round(Convert.ToDouble(BatteryCapacity.Text.Replace('.', ',')) / Convert.ToDouble(RangePerCharge.Text), 2);
+                                    FuelConsumption.Text = fuelConsumption.ToString();
+                                    newCar.FuelConsumption = fuelConsumption;
+                                }
+                                else
+                                {
+
+                                    TextFuelConsumption.Text = "Расход батареии, кВт*ч/км";
+                                    FuelConsumption.Text = "нет данных";
+                                    newCar.FuelConsumption = -1;
+                                }
+                                break;
+                            case "Природный":
+                                TextFuelConsumption.Text = "Расход топлива в смешанном цикле, л/100 км";
+                                newCar.EngineType = "Гибрид";
+                                EngineType.SelectedIndex = 2;
+                                newCar.Fuel = "Газ";
+                                Fuel.SelectedIndex = 3;
+                                newCar.FuelOctane = null;
+                                OctaneNumber.SelectedIndex = 0;
+                                OctaneNumber.SelectedIndex = 0;
+                                TextOctaneNumber.Visibility = Visibility.Collapsed;
+                                OctaneNumber.Visibility = Visibility.Collapsed;
+                                break;
+                            case "Газ/бензин":
+                                TextFuelConsumption.Text = "Расход топлива в смешанном цикле, л/100 км";
+                                newCar.EngineType = "Гибрид";
+                                EngineType.SelectedIndex = 2;
+                                newCar.Fuel = "Газ";
+                                Fuel.SelectedIndex = 3;
+                                newCar.FuelOctane = null;
+                                OctaneNumber.SelectedIndex = 0;
+                                OctaneNumber.SelectedIndex = 0;
+                                TextOctaneNumber.Visibility = Visibility.Collapsed;
+                                OctaneNumber.Visibility = Visibility.Collapsed;
+                                break;
+                        }
+                        break;
+                    case "Кондиционер":
+                        if (item.Item2 == "Есть")
+                        {
+                            Conditioner.SelectedIndex = 1;
+                            newCar.Conditioner = "Есть";
+                        }
+                        else
+                        {
+                            Conditioner.SelectedIndex = 0;
+                            newCar.Conditioner = "Нет";
+                        }
+                        break;
+                    case "Расход топлива в смешанном цикле, л/100 км":
+                        FuelConsumption.Text = item.Item2;
+                        newCar.FuelConsumption = Convert.ToDouble(item.Item2.ToString());
+                        break;
+                    case "Ёмкость батареи, кВт*ч": 
+                        BatteryCapacity.Text = item.Item2;
+                        newCar.BatteryCapacity = Convert.ToDouble(item.Item2.Replace('.', ','));
+                        break;
+                    case "Запас хода на электротяге в км":
+                        TextBlockRangePerCharge.Visibility = Visibility.Visible;
+                        RangePerCharge.Visibility = Visibility.Visible;
+                        RangePerCharge.Text = item.Item2;
+                        newCar.RangePerCharge = Convert.ToDouble(item.Item2);
+                        break;
                 }
             }
-            return textInfo;
+            if (newCar.MaxSpeed == null)
+            {
+                MaxSpeed.Text = 150.ToString();
+                newCar.MaxSpeed = 150;
+            }
+            return;
         }
         private bool IsIgnoredText(string text)
         {
