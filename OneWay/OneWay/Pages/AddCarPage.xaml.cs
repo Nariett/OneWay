@@ -10,7 +10,6 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 using OneWay.Controls;
 using System.Net.NetworkInformation;
-using Microsoft.Win32.SafeHandles;
 
 namespace OneWay.Pages
 {
@@ -155,7 +154,6 @@ namespace OneWay.Pages
             }
             OctaneNumber.SelectedIndex = -1;
             Fuel.SelectedIndex = -1;
-            //Volume.Text = "";
         }
         public void ClearComboBox(ComboBox startingComboBox)
         {

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using OneWay.Controls;
 using OneWay.Class;
 using System.Net.NetworkInformation;
+using OneWay.Services;
 
 namespace OneWay.Pages
 {
@@ -20,13 +21,12 @@ namespace OneWay.Pages
     /// </summary>
     public partial class AddRoutePage : Page
     {
-        public static string selectToken;
-        public static string x = null;
-        public static string y = null;
-        public int fill = 0;
+        bool autofill = false;
         int IdUser;
         DataBase db = new DataBase("OneWayDB.db");
         Route selectRoute = new Route();
+        YandexGeocoderService yandexGeocoderService;
+        GraphHopperRoutingService graphHopperRoutingService;
         List<string> pointCity = new List<string>();
         List<string> additionalPoints = new List<string>();
         List<(double distance, int time)> info = new List<(double distance, int time)>();
@@ -36,6 +36,8 @@ namespace OneWay.Pages
             InitializeComponent();
             Fill.SelectedIndex = 0;
             IdUser = idUser;
+            yandexGeocoderService = new YandexGeocoderService("810e6f73-e4e6-4d63-850a-3a87c1c662ef");
+            graphHopperRoutingService = new GraphHopperRoutingService("7bd83501-9f94-4196-bc57-9af92a81344d");
         }
         private async void StartPoint_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -45,7 +47,7 @@ namespace OneWay.Pages
                 comboBoxStartPoint.SelectedIndex = -1;
                 if (StartPoint.Text.Length != 0)
                 {
-                    List<Tuple<string, string>> route = await GetCityAsync(StartPoint.Text);
+                    List<Tuple<string, string>> route = await yandexGeocoderService.GetCityAsync(StartPoint.Text);
                     AllCity.AddRange(route);
                     foreach (var item in route)
                     {
@@ -62,7 +64,7 @@ namespace OneWay.Pages
                 comboBoxLastPointInfo.SelectedIndex = -1;
                 if (FinishPoint.Text.Length != 0)
                 {
-                    List<Tuple<string, string>> route = await GetCityAsync(FinishPoint.Text);
+                    List<Tuple<string, string>> route = await yandexGeocoderService.GetCityAsync(FinishPoint.Text);
                     AllCity.AddRange(route);
                     foreach (var item in route)
                     {
@@ -71,95 +73,7 @@ namespace OneWay.Pages
                 }
             }
         }
-        public async Task<List<Tuple<string, string>>> GetCityAsync(string city)
-        {
-            string url = $"https://geocode-maps.yandex.ru/1.x/?apikey=810e6f73-e4e6-4d63-850a-3a87c1c662ef&geocode={city}&format=json";
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    HttpResponseMessage response = await client.GetAsync(url);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Получаем содержимое ответа в виде строки
-                        string jsonResponse = await response.Content.ReadAsStringAsync();
-                        JObject jsonObject = JObject.Parse(jsonResponse);
-                        List<Tuple<string, string>> posKeys = GetPosKeys(jsonObject);
-                        if (posKeys.Count == 0)
-                        {
-                            CustomMessageBox.Show("Уведомление", $"Введенный город не найден. Повторите попытку.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
-                            return new List<Tuple<string, string>>();
-                        }
-                        return posKeys;
-                    }
-                    else
-                    {
-                        CustomMessageBox.Show("Уведомление", $"Ошибка: {response.StatusCode}.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    CustomMessageBox.Show("Уведомление", $"Ошибка: {ex.Message}.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
-                }
-            }
-            return new List<Tuple<string, string>>();
-        }
-        public static List<Tuple<string, string>> GetPosKeys(JToken token)
-        {
-            List<string> posKeys = new List<string>();
-            List<Tuple<string, string>> data = new List<Tuple<string, string>>();
-
-            if (token.Type == JTokenType.Object)
-            {
-                foreach (JProperty property in token.Children<JProperty>())
-                {
-                    JToken currentObject = property.Parent;
-                    if (property.Name == "text" && (property.Parent?.SelectToken("kind")?.Value<string>() == "locality" || property.Parent?.SelectToken("kind")?.Value<string>() == "province" || property.Parent?.SelectToken("kind")?.Value<string>() == "house"))
-                    {
-                        x = property.Value.ToString();
-                        selectToken = GetParentPathUntil(currentObject, "GeoObject");
-                    }
-
-                    if (property.Name == "pos")
-                    {
-                        string objectName = GetParentPathUntil(currentObject, "GeoObject");
-                        if (selectToken == objectName)
-                        {
-                            y = ReverseString(property.Value.ToString());
-                        }
-                    }
-
-                    data.AddRange(GetPosKeys(property.Value));
-
-                    if (!string.IsNullOrEmpty(x) && !string.IsNullOrEmpty(y))
-                    {
-                        data.Add(Tuple.Create(x, y));
-                        x = null;
-                        y = null;
-                    }
-                }
-            }
-            else if (token.Type == JTokenType.Array)
-            {
-                foreach (JToken arrayItem in token.Children())
-                {
-                    data.AddRange(GetPosKeys(arrayItem));
-                }
-            }
-            return data;
-        }
-        private static string GetParentPathUntil(JToken token, string stopAt)
-        {
-            var path = token.Path;
-            var index = path.LastIndexOf(stopAt, StringComparison.Ordinal);
-            return index >= 0 ? path.Substring(0, index + stopAt.Length) : path;
-        }
-        public static string ReverseString(string input)
-        {
-            string[] parts = input.Split(' ');
-            return $"{parts[1]} {parts[0]}";
-        }
-
+        
         private void CreatePointButton_Click(object sender, RoutedEventArgs e)
         {
             AddPoint();
@@ -195,12 +109,12 @@ namespace OneWay.Pages
                 Margin = new Thickness(5, 0, 5, 0),
                 VerticalAlignment = VerticalAlignment.Center,
             };
-            if(fill == 1)
+            if(autofill)
             {
                 newTextBox.LostFocus += Point_LostFocus;
             }
             Grid.SetColumn(newTextBox, 1);
-            if(fill == 1 )
+            if(autofill)
             {
                 ComboBox comboBox = new ComboBox()
                 {
@@ -270,7 +184,7 @@ namespace OneWay.Pages
                             comboBox.Items.Clear();
                             if (textBox.Text.Length != 0)
                             {
-                                List<Tuple<string, string>> route = await GetCityAsync(textBox.Text);
+                                List<Tuple<string, string>> route = await yandexGeocoderService.GetCityAsync(textBox.Text);
                                 AllCity.AddRange(route);
                                 foreach (var item in route)
                                 {
@@ -351,19 +265,7 @@ namespace OneWay.Pages
                         CustomMessageBox.Show("Уведомление", $"Заполните все поля или удалите ненужные и повторите попытку.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
                         return;
                     }
-                    var client = new HttpClient();
-                    HttpResponseMessage request;
-                    if (points.Split(',').Length == 3) // проверка на кол-во точек в маршруте
-                    {
-                        request = await client.GetAsync($"https://graphhopper.com/api/1/route?{points}profile=car&calc_points=false&algorithm=alternative_route&key=7bd83501-9f94-4196-bc57-9af92a81344d");
-                    }
-                    else
-                    {
-                        request = await client.GetAsync($"https://graphhopper.com/api/1/route?{points}profile=car&calc_points=false&key=7bd83501-9f94-4196-bc57-9af92a81344d");
-                    }
-                    var responseContent = await request.Content.ReadAsStringAsync();
-                    var jsonResponse = JObject.Parse(responseContent);
-                    var paths = jsonResponse["paths"];
+                    var paths = await graphHopperRoutingService.GetRouteInfo(points);
                     info = new List<(double distance, int time)>();
                     if(paths != null)
                     {
@@ -378,14 +280,15 @@ namespace OneWay.Pages
                     }
                     else
                     {
-                        CustomMessageBox.Show("Уведомление", $"Данный машрут не найден. Выберите другие города и повторите попытку.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);          }
+                        CustomMessageBox.Show("Уведомление", $"Данный машрут не найден. Выберите другие города и повторите попытку.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Information);          
+                    }
                 }
                 else
                 {
                     CustomMessageBox.Show("Уведомление", $"Заполните все поля и повторите попытку.", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
                 }
             }
-            else // ручно ввод данных
+            else
             {   
 
                 if (StartPoint.Text != null || FinishPoint.Text != null || Distance.Text != null)
@@ -683,7 +586,7 @@ namespace OneWay.Pages
                     comboBoxStartPoint.Visibility = Visibility.Visible;
                     comboBoxLastPointInfo.Visibility = Visibility.Visible;
                     Distance.Visibility = Visibility.Collapsed;
-                    fill = 1;
+                    autofill = true;
                 }
                 else
                 {
@@ -699,7 +602,7 @@ namespace OneWay.Pages
                 comboBoxStartPoint.Visibility = Visibility.Collapsed;
                 comboBoxLastPointInfo.Visibility = Visibility.Collapsed;
                 Distance.Visibility = Visibility.Visible;
-                fill = 0;
+                autofill = false;
 
             }
         }

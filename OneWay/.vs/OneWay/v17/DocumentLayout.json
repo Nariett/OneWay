@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\OneWay\\OneWay\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\pages\\addcarpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\pages\\addcarpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\controls\\caritem.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\controls\\caritem.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\services\\yandexgeocoderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\services\\yandexgeocoderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\services\\graphhopperroutingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\services\\graphhopperroutingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\pages\\addroutepage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\pages\\addroutepage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|c:\\git\\oneway\\oneway\\oneway\\class\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\class\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|C:\\Git\\OneWay\\OneWay\\oneway\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|C:\\Git\\OneWay\\OneWay\\oneway\\pages\\addcarpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6A4FCD7A-82B7-4D82-96B0-ABCB8FB8F697}|OneWay\\OneWay.csproj|solutionrelative:oneway\\pages\\addcarpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1407,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddCarPage.xaml.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Pages\\AddCarPage.xaml.cs",
+              "RelativeDocumentMoniker": "OneWay\\Pages\\AddCarPage.xaml.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Pages\\AddCarPage.xaml.cs",
+              "RelativeToolTip": "OneWay\\Pages\\AddCarPage.xaml.cs",
+              "ViewState": "AgIAAEsCAAAAAAAAAAAIwFoCAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T14:54:56.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarItem.xaml.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Controls\\CarItem.xaml.cs",
+              "RelativeDocumentMoniker": "OneWay\\Controls\\CarItem.xaml.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Controls\\CarItem.xaml.cs",
+              "RelativeToolTip": "OneWay\\Controls\\CarItem.xaml.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAA8wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T14:54:37.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\App.config",
+              "RelativeDocumentMoniker": "OneWay\\App.config",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\App.config",
+              "RelativeToolTip": "OneWay\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-01T14:54:04.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\packages.config",
+              "RelativeDocumentMoniker": "OneWay\\packages.config",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\packages.config",
+              "RelativeToolTip": "OneWay\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-01T14:49:11.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "YandexGeocoderService.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Services\\YandexGeocoderService.cs",
+              "RelativeDocumentMoniker": "OneWay\\Services\\YandexGeocoderService.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Services\\YandexGeocoderService.cs",
+              "RelativeToolTip": "OneWay\\Services\\YandexGeocoderService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T14:46:52.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Class\\DataBase.cs",
+              "RelativeDocumentMoniker": "OneWay\\Class\\DataBase.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Class\\DataBase.cs",
+              "RelativeToolTip": "OneWay\\Class\\DataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T14:19:06.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GraphHopperRoutingService.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Services\\GraphHopperRoutingService.cs",
+              "RelativeDocumentMoniker": "OneWay\\Services\\GraphHopperRoutingService.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Services\\GraphHopperRoutingService.cs",
+              "RelativeToolTip": "OneWay\\Services\\GraphHopperRoutingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T14:10:04.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddRoutePage.xaml.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Pages\\AddRoutePage.xaml.cs",
+              "RelativeDocumentMoniker": "OneWay\\Pages\\AddRoutePage.xaml.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Pages\\AddRoutePage.xaml.cs",
+              "RelativeToolTip": "OneWay\\Pages\\AddRoutePage.xaml.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T13:42:04.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "OneWay\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\MainWindow.xaml.cs",
+              "RelativeToolTip": "OneWay\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAqwGAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T13:40:36.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddCarPage.xaml",
+              "DocumentMoniker": "C:\\Git\\OneWay\\OneWay\\OneWay\\Pages\\AddCarPage.xaml",
+              "RelativeDocumentMoniker": "OneWay\\Pages\\AddCarPage.xaml",
+              "ToolTip": "C:\\Git\\OneWay\\OneWay\\OneWay\\Pages\\AddCarPage.xaml",
+              "RelativeToolTip": "OneWay\\Pages\\AddCarPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-01T13:40:36.112Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
