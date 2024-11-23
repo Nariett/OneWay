@@ -44,11 +44,18 @@ namespace OneWay.Pages
                 comboBoxStartPoint.SelectedIndex = -1;
                 if (StartPoint.Text.Length != 0)
                 {
-                    List<Tuple<string, string>> route = await yandexGeocoderService.GetCityAsync(StartPoint.Text);
-                    AllCity.AddRange(route);
-                    foreach (var item in route)
+                    try
                     {
-                        comboBoxStartPoint.Items.Add(item.Item1);
+                        List<Tuple<string, string>> route = await yandexGeocoderService.GetCityAsync(StartPoint.Text);
+                        AllCity.AddRange(route);
+                        foreach (var item in route)
+                        {
+                            comboBoxStartPoint.Items.Add(item.Item1);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        CustomMessageBox.Show("Ошибка", $"Не удалось получить данные о городе: {ex.Message}", MessageBoxButton.OK, CustomMessageBox.MessageBoxImage.Error);
                     }
                 }
             }
